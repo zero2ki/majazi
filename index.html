@@ -1,0 +1,2636 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>بازی‌های امروز — دوشنبه ۲۷ مهر | کلاس چهارم</title>
+<style>
+  * {
+    box-sizing: border-box;
+    font-family: Tahoma, Arial, sans-serif;
+    -webkit-tap-highlight-color: transparent;
+  }
+  body {
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 50%, #fef3c7 100%);
+    color: #1e293b;
+    min-height: 100vh;
+    direction: rtl;
+    text-align: right;
+    line-height: 1.7;
+    overflow-x: hidden;
+  }
+  .container {
+    max-width: 680px;
+    margin: 0 auto;
+    padding: 16px;
+  }
+  .hidden {
+    display: none !important;
+  }
+  /* Header & Menu Cards */
+  .main-header {
+    background: linear-gradient(135deg, #1d4ed8, #3b82f6);
+    color: #ffffff;
+    padding: 20px 16px;
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: 0 8px 20px rgba(29, 78, 216, 0.25);
+    margin-bottom: 20px;
+    border: 3px solid #93c5fd;
+  }
+  .main-header h1 {
+    margin: 0;
+    font-size: 1.4rem;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.2);
+  }
+  .main-header p {
+    margin: 6px 0 0;
+    font-size: 0.95rem;
+    opacity: 0.95;
+  }
+  .menu-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 14px;
+    margin-bottom: 22px;
+  }
+  @media (min-width: 520px) {
+    .menu-grid {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+  .menu-card {
+    background: #ffffff;
+    border-radius: 18px;
+    padding: 18px;
+    cursor: pointer;
+    border: 3px solid #e2e8f0;
+    box-shadow: 0 6px 14px rgba(0,0,0,0.06);
+    transition: transform 0.2s, border-color 0.2s, box-shadow 0.2s;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+    overflow: hidden;
+  }
+  .menu-card:hover, .menu-card:active {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.12);
+  }
+  .menu-card.c1 { border-color: #f59e0b; background: linear-gradient(to bottom left, #ffffff, #fffbeb); }
+  .menu-card.c2 { border-color: #06b6d4; background: linear-gradient(to bottom left, #ffffff, #ecfeff); }
+  .menu-card.c3 { border-color: #10b981; background: linear-gradient(to bottom left, #ffffff, #ecfdf5); }
+  .menu-card.c4 { border-color: #8b5cf6; background: linear-gradient(to bottom left, #ffffff, #f5f3ff); }
+  .menu-card-icon {
+    font-size: 2.3rem;
+    margin-bottom: 8px;
+  }
+  .menu-card-title {
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: #0f172a;
+    margin-bottom: 6px;
+  }
+  .menu-card-sub {
+    font-size: 0.85rem;
+    color: #475569;
+    margin-bottom: 12px;
+  }
+  .menu-status-badge {
+    display: inline-block;
+    padding: 4px 10px;
+    border-radius: 99px;
+    font-size: 0.78rem;
+    font-weight: bold;
+    align-self: flex-start;
+  }
+  .badge-open { background: #dbeafe; color: #1e40af; }
+  .badge-done { background: #dcfce7; color: #166534; }
+
+  .reminders-box {
+    background: #fffbeb;
+    border: 2px dashed #f59e0b;
+    border-radius: 16px;
+    padding: 16px;
+    color: #92400e;
+  }
+  .reminders-box h3 {
+    margin: 0 0 10px 0;
+    font-size: 1.05rem;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .reminders-box ul {
+    margin: 0;
+    padding-right: 20px;
+    font-size: 0.9rem;
+  }
+  .reminders-box li {
+    margin-bottom: 6px;
+  }
+
+  /* Common Game Cards & Buttons */
+  .game-section {
+    animation: fadeIn 0.25s ease;
+  }
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(6px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  .top-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 14px;
+    background: #ffffff;
+    padding: 10px 14px;
+    border-radius: 14px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+  }
+  .btn-back {
+    background: #f1f5f9;
+    color: #334155;
+    border: 2px solid #cbd5e1;
+    padding: 8px 14px;
+    border-radius: 12px;
+    font-size: 0.9rem;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  .btn-back:active {
+    background: #e2e8f0;
+  }
+  .card {
+    background: #ffffff;
+    border-radius: 20px;
+    padding: 20px;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.07);
+    margin-bottom: 16px;
+    border: 2px solid #e2e8f0;
+  }
+  .card-title {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-top: 0;
+    margin-bottom: 14px;
+    color: #0f172a;
+    border-bottom: 2px solid #f1f5f9;
+    padding-bottom: 10px;
+  }
+  .input-field {
+    width: 100%;
+    padding: 12px 14px;
+    font-size: 1rem;
+    border: 2px solid #94a3b8;
+    border-radius: 12px;
+    margin-bottom: 12px;
+    outline: none;
+    background: #f8fafc;
+  }
+  .input-field:focus {
+    border-color: #2563eb;
+    background: #ffffff;
+  }
+  .btn {
+    display: inline-block;
+    width: 100%;
+    padding: 13px 18px;
+    font-size: 1rem;
+    font-weight: bold;
+    text-align: center;
+    border: none;
+    border-radius: 14px;
+    cursor: pointer;
+    transition: transform 0.12s, opacity 0.2s;
+    box-shadow: 0 4px 0 rgba(0,0,0,0.18);
+    margin-top: 6px;
+  }
+  .btn:active {
+    transform: translateY(2px);
+    box-shadow: 0 2px 0 rgba(0,0,0,0.18);
+  }
+  .btn:disabled {
+    opacity: 0.55;
+    cursor: not-allowed;
+    transform: none;
+  }
+  .btn-primary { background: #2563eb; color: #fff; }
+  .btn-success { background: #16a34a; color: #fff; }
+  .btn-amber { background: #d97706; color: #fff; }
+  .btn-purple { background: #7c3aed; color: #fff; }
+  .btn-sm {
+    width: auto;
+    padding: 9px 14px;
+    font-size: 0.9rem;
+    margin: 4px;
+  }
+
+  .darsname-box {
+    background: #f0fdf4;
+    border: 2px solid #86efac;
+    border-radius: 14px;
+    padding: 15px;
+    margin-bottom: 16px;
+    font-size: 0.98rem;
+    color: #14532d;
+  }
+  .quran-ayat {
+    background: #fffbeb;
+    border: 2px solid #fcd34d;
+    border-radius: 14px;
+    padding: 16px;
+    margin: 12px 0;
+    font-size: 1.15rem;
+    line-height: 2.1;
+    color: #78350f;
+    text-align: center;
+    font-weight: bold;
+  }
+  .stars-bar {
+    font-size: 1.25rem;
+    font-weight: bold;
+    color: #d97706;
+    background: #fef3c7;
+    padding: 6px 12px;
+    border-radius: 10px;
+    border: 1px solid #fde68a;
+  }
+
+  /* Interactive Simulation Stage */
+  .sim-stage {
+    background: #f8fafc;
+    border: 2px solid #cbd5e1;
+    border-radius: 16px;
+    padding: 16px;
+    text-align: center;
+    margin-bottom: 16px;
+  }
+  .progress-wrap {
+    width: 100%;
+    height: 18px;
+    background: #e2e8f0;
+    border-radius: 99px;
+    overflow: hidden;
+    margin: 10px 0;
+    border: 1px solid #cbd5e1;
+  }
+  .progress-fill {
+    height: 100%;
+    width: 0%;
+    background: linear-gradient(90deg, #22c55e, #eab308, #ef4444);
+    transition: width 0.1s linear;
+  }
+
+  /* Questions & Options */
+  .question-box {
+    background: #eff6ff;
+    border: 2px solid #93c5fd;
+    border-radius: 16px;
+    padding: 16px;
+    margin-top: 14px;
+  }
+  .question-title {
+    font-weight: bold;
+    font-size: 1.02rem;
+    margin-bottom: 12px;
+    color: #1e3a8a;
+  }
+  .option-btn {
+    display: block;
+    width: 100%;
+    text-align: right;
+    background: #ffffff;
+    border: 2px solid #cbd5e1;
+    border-radius: 12px;
+    padding: 11px 14px;
+    margin-bottom: 8px;
+    font-size: 0.95rem;
+    cursor: pointer;
+    color: #1e293b;
+    transition: background 0.15s, border-color 0.15s;
+  }
+  .option-btn:hover:not(:disabled) {
+    border-color: #3b82f6;
+    background: #f8fafc;
+  }
+  .option-btn.correct {
+    background: #dcfce7 !important;
+    border-color: #16a34a !important;
+    color: #14532d !important;
+    font-weight: bold;
+  }
+  .option-btn.wrong {
+    background: #fee2e2 !important;
+    border-color: #ef4444 !important;
+    color: #7f1d1d !important;
+    opacity: 0.65;
+    text-decoration: line-through;
+  }
+  .feedback-msg {
+    margin-top: 10px;
+    padding: 10px 12px;
+    border-radius: 10px;
+    font-size: 0.92rem;
+    font-weight: bold;
+  }
+  .feedback-ok {
+    background: #dcfce7;
+    color: #166534;
+    border: 1px solid #86efac;
+  }
+  .feedback-err {
+    background: #fef2f2;
+    color: #991b1b;
+    border: 1px solid #fecaca;
+  }
+
+  /* Report & Lock Box */
+  .report-pre {
+    background: #1e293b;
+    color: #f8fafc;
+    padding: 14px;
+    border-radius: 12px;
+    white-space: pre-wrap;
+    word-break: break-word;
+    font-size: 0.92rem;
+    line-height: 1.8;
+    margin: 12px 0;
+    border: 2px solid #475569;
+  }
+  .lock-title-tap {
+    user-select: none;
+    cursor: pointer;
+  }
+  .inline-msg {
+    margin-top: 10px;
+    padding: 10px;
+    border-radius: 10px;
+    font-size: 0.9rem;
+    text-align: center;
+    font-weight: bold;
+  }
+
+  /* Game 2 Specific Lab Cups */
+  .cups-row {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+    margin: 12px 0;
+  }
+  .cup-card {
+    background: #ffffff;
+    border: 2px solid #bae6fd;
+    border-radius: 12px;
+    padding: 8px 6px;
+    text-align: center;
+  }
+  .bar-chart {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-end;
+    height: 90px;
+    background: #f1f5f9;
+    border-radius: 10px;
+    padding: 10px 8px 4px;
+    margin-top: 10px;
+    border: 1px solid #cbd5e1;
+  }
+  .bar-col {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 28%;
+  }
+  .bar-fill {
+    width: 100%;
+    background: #3b82f6;
+    border-radius: 6px 6px 0 0;
+    transition: height 0.2s;
+    min-height: 4px;
+  }
+  .bar-label {
+    font-size: 0.75rem;
+    margin-top: 4px;
+    color: #334155;
+  }
+  .checkbox-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: #fef3c7;
+    border: 2px solid #f59e0b;
+    padding: 12px;
+    border-radius: 12px;
+    margin: 12px 0;
+    cursor: pointer;
+    font-weight: bold;
+    color: #78350f;
+  }
+  .checkbox-row input {
+    width: 22px;
+    height: 22px;
+    accent-color: #16a34a;
+  }
+</style>
+</head>
+<body>
+
+<div class="container">
+  <!-- ==================== منوی اصلی ==================== -->
+  <div id="main-menu">
+    <div class="main-header">
+      <h1>بازی‌های امروز — دوشنبه ۲۷ مهر</h1>
+      <p>پایه چهارم دبستان • آزمایشگاه و مأموریت‌های یادگیری</p>
+    </div>
+
+    <div class="menu-grid">
+      <div class="menu-card c1" id="menu-btn-g1">
+        <div>
+          <div class="menu-card-icon">⚡</div>
+          <div class="menu-card-title">مأموریت انرژی</div>
+          <div class="menu-card-sub">علوم درس ۲ (آزمایشگاه واقعی انرژی)</div>
+        </div>
+        <span class="menu-status-badge badge-open" id="menu-badge-g1">آماده شروع</span>
+      </div>
+
+      <div class="menu-card c2" id="menu-btn-g2">
+        <div>
+          <div class="menu-card-icon">🧪</div>
+          <div class="menu-card-title">مأموریت مخلوط‌ها</div>
+          <div class="menu-card-sub">مرور علوم درس ۱ (آزمایش‌های ۴گانه)</div>
+        </div>
+        <span class="menu-status-badge badge-open" id="menu-badge-g2">آماده شروع</span>
+      </div>
+
+      <div class="menu-card c3" id="menu-btn-g3">
+        <div>
+          <div class="menu-card-icon">🕌</div>
+          <div class="menu-card-title">قرآن جلسه‌ی اول</div>
+          <div class="menu-card-sub">سوره‌ی ابراهیم، آیات ۳۸ تا ۴۱</div>
+        </div>
+        <span class="menu-status-badge badge-open" id="menu-badge-g3">آماده شروع</span>
+      </div>
+
+      <div class="menu-card c4" id="menu-btn-g4">
+        <div>
+          <div class="menu-card-icon">🔢</div>
+          <div class="menu-card-title">ریاضی: الگو و ماشین</div>
+          <div class="menu-card-sub">صفحه‌های ۱۱ و ۱۲ (۴ ایستگاه)</div>
+        </div>
+        <span class="menu-status-badge badge-open" id="menu-badge-g4">آماده شروع</span>
+      </div>
+    </div>
+
+    <div class="reminders-box">
+      <h3>📌 یادآوری‌های مهم امروز:</h3>
+      <ul>
+        <li>اول <strong>درسنامه</strong> خوانده شود (ریاضی: اول <strong>فیلم آقا</strong> دیده شود).</li>
+        <li>گزارش در <strong>پی‌وی آموزگار</strong> فرستاده شود نه گروه.</li>
+        <li>مهلت ارسال گزارش: <strong>ساعت ۲۰</strong> امشب.</li>
+        <li>هر بازی <strong>فقط یک بار</strong> با هر گوشی قابل انجام است.</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- ==================== بازی ۱: مأموریت انرژی ==================== -->
+  <section id="g1-section" class="game-section hidden">
+    <div class="top-bar">
+      <button type="button" class="btn-back" id="g1-back-btn">🔙 برگشت به منو</button>
+      <div class="stars-bar" id="g1-top-stars">⭐ ۰ از ۴</div>
+    </div>
+
+    <!-- صفحه قفل بازی ۱ -->
+    <div id="g1-lock-view" class="card hidden">
+      <h2 class="card-title lock-title-tap" id="g1-lock-title">🔒 مأموریت انرژی قبلاً کامل شده است</h2>
+      <p style="margin:0 0 8px; color:#475569; font-size:0.92rem;">نتیجه‌ی ثبت‌شده‌ی شما در این گوشی:</p>
+      <div id="g1-lock-summary" style="font-weight:bold; color:#0f172a; margin-bottom:8px;"></div>
+      <pre class="report-pre" id="g1-lock-report"></pre>
+      <button type="button" class="btn btn-primary" id="g1-lock-copy-btn">📋 کپی گزارش</button>
+      <div id="g1-lock-msg" class="inline-msg hidden"></div>
+      <div id="g1-teacher-reset-box" class="hidden" style="margin-top:12px; background:#fff1f2; border:2px solid #f43f5e; padding:12px; border-radius:12px; text-align:center;">
+        <p style="margin:0 0 8px; font-weight:bold; color:#9f1239;">پنل مخفی آموزگار: آیا قفل این بازی پاک شود؟</p>
+        <button type="button" class="btn btn-sm" style="background:#e11d48; color:#fff;" id="g1-confirm-reset-btn">بله، قفل پاک شود</button>
+        <button type="button" class="btn btn-sm" style="background:#64748b; color:#fff;" id="g1-cancel-reset-btn">انصراف</button>
+      </div>
+    </div>
+
+    <!-- صفحه شروع بازی ۱ -->
+    <div id="g1-start-view" class="card">
+      <h2 class="card-title">⚡ مأموریت انرژی (علوم درس ۲)</h2>
+      <p>دانشمند عزیز، برای ورود به آزمایشگاه انرژی اول اسمت رو بنویس:</p>
+      <input type="text" id="g1-name-input" class="input-field" placeholder="اسمت رو بنویس (مثلاً: علی رضایی)" autocomplete="off">
+      <div id="g1-name-err" class="feedback-msg feedback-err hidden">لطفاً اول اسمت رو بنویس!</div>
+      <button type="button" class="btn btn-amber" id="g1-start-btn">شروع مأموریت 🚀</button>
+    </div>
+
+    <!-- صفحه درسنامه بازی ۱ -->
+    <div id="g1-dars-view" class="card hidden">
+      <h2 class="card-title">📖 درسنامه: مأموریت انرژی</h2>
+      <div class="darsname-box">
+        «انرژی یعنی توانایی انجام کار. شکل‌های انرژی: حرکتی 🏃 (هر چیزی که حرکت می‌کند)، گرمایی 🔥، نورانی 💡 و صوتی 🔊. شکل‌های انرژی به هم تبدیل می‌شوند؛ مثلاً انرژی حرکتی باد می‌تواند فرفره را بچرخاند!»
+      </div>
+      <button type="button" class="btn btn-success" id="g1-enter-lab-btn">ورود به بازی و آزمایشگاه 🔬</button>
+    </div>
+
+    <!-- صفحه ایستگاه‌های بازی ۱ -->
+    <div id="g1-play-view" class="card hidden">
+      <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:10px;">
+        <span id="g1-station-badge" style="background:#dbeafe; color:#1e40af; padding:4px 12px; border-radius:99px; font-weight:bold; font-size:0.88rem;">ایستگاه ۱ از ۴</span>
+        <span id="g1-player-label" style="font-size:0.88rem; color:#475569;"></span>
+      </div>
+
+      <!-- ایستگاه ۱: فرفره -->
+      <div id="g1-st1" class="g1-station">
+        <h3 class="card-title">۱. 🌪️ فرفره (آزمایش کتاب ص ۱۸)</h3>
+        <div class="sim-stage">
+          <p style="margin:0 0 8px; font-size:0.9rem;">دکمه‌ی «فوت کن» را نگه دار تا با باد فرفره تند بچرخد و نوار پر شود!</p>
+          <div style="margin:10px auto; width:160px; height:160px; position:relative;">
+            <svg viewBox="0 0 160 160" width="160" height="160">
+              <!-- پایه چوبی فرفره -->
+              <rect x="76" y="78" width="8" height="75" rx="4" fill="#a16207" stroke="#713f12" stroke-width="1.5"/>
+              <!-- خطوط جریان باد -->
+              <g id="g1-wind-lines" opacity="0.2" stroke="#38bdf8" stroke-width="2.5" stroke-linecap="round">
+                <path d="M8,35 Q28,30 44,38" fill="none"/>
+                <path d="M4,60 Q26,55 46,60" fill="none"/>
+                <path d="M10,85 Q30,80 45,86" fill="none"/>
+              </g>
+              <!-- پره‌های واقعی کاغذی تاشده فرفره -->
+              <g id="g1-pinwheel-svg" style="transform-origin: 80px 72px;">
+                <path d="M80,72 L40,22 C62,22 76,42 80,72 Z" fill="#ef4444" stroke="#b91c1c" stroke-width="1.5"/>
+                <path d="M80,72 L60,42 L40,22 Z" fill="#fca5a5" opacity="0.7"/>
+                <path d="M80,72 L130,32 C130,54 110,68 80,72 Z" fill="#3b82f6" stroke="#1d4ed8" stroke-width="1.5"/>
+                <path d="M80,72 L110,52 L130,32 Z" fill="#93c5fd" opacity="0.7"/>
+                <path d="M80,72 L120,122 C98,122 84,102 80,72 Z" fill="#22c55e" stroke="#15803d" stroke-width="1.5"/>
+                <path d="M80,72 L100,102 L120,122 Z" fill="#86efac" opacity="0.7"/>
+                <path d="M80,72 L30,112 C30,90 50,76 80,72 Z" fill="#eab308" stroke="#a16207" stroke-width="1.5"/>
+                <path d="M80,72 L50,92 L30,112 Z" fill="#fde047" opacity="0.7"/>
+                <!-- سنجاق وسط فرفره -->
+                <circle cx="80" cy="72" r="7" fill="#f8fafc" stroke="#334155" stroke-width="2.5"/>
+                <circle cx="80" cy="72" r="2.5" fill="#dc2626"/>
+              </g>
+            </svg>
+          </div>
+          <div class="progress-wrap">
+            <div id="g1-st1-bar" class="progress-fill"></div>
+          </div>
+          <div id="g1-st1-pct" style="font-size:0.85rem; font-weight:bold; margin-bottom:8px;">سرعت چرخش: ۰٪</div>
+          <button type="button" class="btn btn-primary" id="g1-blow-btn" style="user-select:none;">🌬️ فوت کن (نگه دار)</button>
+        </div>
+
+        <div id="g1-q1-box" class="question-box hidden">
+          <div class="question-title">سؤال: «فرفره انرژی چرخیدنش را از کجا گرفت؟»</div>
+          <button type="button" class="option-btn" data-correct="true">از انرژی حرکتی باد 🌪️</button>
+          <button type="button" class="option-btn" data-correct="false">از باتری 🔋</button>
+          <button type="button" class="option-btn" data-correct="false">از انرژی گرمایی 🔥</button>
+          <div id="g1-q1-fb" class="feedback-msg hidden"></div>
+          <button type="button" class="btn btn-success hidden" id="g1-next-1">ایستگاه بعدی ⬅️</button>
+        </div>
+      </div>
+
+      <!-- ایستگاه ۲: چرخ آب -->
+      <div id="g1-st2" class="g1-station hidden">
+        <h3 class="card-title">۲. 💧 چرخ آب (ص ۱۹)</h3>
+        <div class="sim-stage">
+          <p style="margin:0 0 10px; font-size:0.9rem;">شدت آب را انتخاب کن و دکمه‌ی «آب را باز کن» را بزن تا چرخ بچرخد و لیوان بالا بیاید:</p>
+          <div style="margin-bottom:10px;">
+            <button type="button" class="btn btn-sm g1-water-lvl" data-lvl="1" style="background:#93c5fd; color:#1e3a8a;">آب کم 💧</button>
+            <button type="button" class="btn btn-sm g1-water-lvl" data-lvl="2" style="background:#3b82f6; color:#fff;">آب متوسط 💧💧</button>
+            <button type="button" class="btn btn-sm g1-water-lvl" data-lvl="3" style="background:#1d4ed8; color:#fff;">آب زیاد 🌊</button>
+          </div>
+          <div style="background:#e0f2fe; border-radius:12px; padding:8px; border:1px solid #bae6fd;">
+            <svg viewBox="0 0 260 155" width="100%" height="155" style="max-width:300px; margin:0 auto; display:block;">
+              <!-- شیر آب واقعی -->
+              <path d="M50,8 L98,8 C105,8 110,13 110,20 L110,28 L96,28 L96,20 L50,20 Z" fill="#64748b" stroke="#334155" stroke-width="1.5"/>
+              <rect x="68" y="2" width="16" height="5" rx="2" fill="#dc2626"/>
+              <!-- جریان آب -->
+              <rect id="g1-water-stream" x="98" y="28" width="0" height="120" rx="3" fill="#0284c7" opacity="0.8"/>
+              <!-- محور و قرقره نخ -->
+              <line x1="130" y1="82" x2="210" y2="82" stroke="#475569" stroke-width="5" stroke-linecap="round"/>
+              <!-- نخ متصل به لیوان -->
+              <line id="g1-rope-line" x1="205" y1="82" x2="205" y2="122" stroke="#78350f" stroke-width="2"/>
+              <!-- چرخ پره‌دار واقعی -->
+              <g id="g1-wheel-svg" style="transform-origin: 130px 82px;">
+                <circle cx="130" cy="82" r="36" fill="none" stroke="#0369a1" stroke-width="6"/>
+                <circle cx="130" cy="82" r="22" fill="none" stroke="#0284c7" stroke-width="2"/>
+                <!-- ۸ پره واقعی روی چرخ -->
+                <g stroke="#0f172a" stroke-width="3" fill="#0284c7">
+                  <rect x="127" y="36" width="6" height="14" rx="1"/>
+                  <rect x="127" y="114" width="6" height="14" rx="1"/>
+                  <rect x="84" y="79" width="14" height="6" rx="1"/>
+                  <rect x="162" y="79" width="14" height="6" rx="1"/>
+                  <line x1="130" y1="46" x2="130" y2="118" stroke="#0369a1" stroke-width="3"/>
+                  <line x1="94" y1="82" x2="166" y2="82" stroke="#0369a1" stroke-width="3"/>
+                  <line x1="104" y1="56" x2="156" y2="108" stroke="#0369a1" stroke-width="3"/>
+                  <line x1="156" y1="56" x2="104" y2="108" stroke="#0369a1" stroke-width="3"/>
+                </g>
+                <circle cx="130" cy="82" r="8" fill="#1e293b"/>
+              </g>
+              <!-- لیوان واقعی آویزان از نخ -->
+              <g id="g1-cup-lift" transform="translate(0,0)">
+                <path d="M193,122 L196,146 L214,146 L217,122 Z" fill="#fef08a" stroke="#ca8a04" stroke-width="2"/>
+                <path d="M193,122 Q205,114 217,122" fill="none" stroke="#78350f" stroke-width="1.5"/>
+              </g>
+            </svg>
+          </div>
+          <div id="g1-st2-status" style="font-size:0.86rem; font-weight:bold; margin:8px 0; color:#0369a1;">شدت انتخاب‌شده: آب متوسط</div>
+          <button type="button" class="btn btn-primary" id="g1-open-water-btn">🚰 آب را باز کن</button>
+        </div>
+
+        <div id="g1-q2-box" class="question-box hidden">
+          <div class="question-title">سؤال: «چرخ، انرژی لازم برای بالا بردن لیوان را از کجا گرفت؟»</div>
+          <button type="button" class="option-btn" data-correct="false">از برق ساختمان ⚡</button>
+          <button type="button" class="option-btn" data-correct="true">از انرژی حرکتی آب جاری 💧</button>
+          <button type="button" class="option-btn" data-correct="false">از انرژی صوتی 🔊</button>
+          <div id="g1-q2-fb" class="feedback-msg hidden"></div>
+          <button type="button" class="btn btn-success hidden" id="g1-next-2">ایستگاه بعدی ⬅️</button>
+        </div>
+      </div>
+
+      <!-- ایستگاه ۳: مارپیچ روی بخاری -->
+      <div id="g1-st3" class="g1-station hidden">
+        <h3 class="card-title">۳. 🔥 مارپیچ روی بخاری (ص ۲۱)</h3>
+        <div class="sim-stage">
+          <p style="margin:0 0 8px; font-size:0.9rem;">شعله‌ی بخاری را روشن کن (کم یا زیاد) تا هوای گرم بالا برود و مارپیچ کاغذی بچرخد:</p>
+          <div style="background:#fff7ed; border:1px solid #fed7aa; border-radius:12px; padding:10px;">
+            <svg viewBox="0 0 220 165" width="100%" height="165" style="max-width:260px; margin:0 auto; display:block;">
+              <!-- نخ آویزان از بالا -->
+              <line x1="110" y1="0" x2="110" y2="25" stroke="#64748b" stroke-width="2"/>
+              <!-- مارپیچ کاغذی واقعی -->
+              <g id="g1-spiral-svg" style="transform-origin: 110px 55px;">
+                <circle cx="110" cy="55" r="34" fill="#ffedd5" stroke="#fb923c" stroke-width="1.5"/>
+                <path d="M110,55 m0,0 a4,4 0 1,0 8,0 a10,10 0 1,0 -20,0 a17,17 0 1,0 34,0 a24,24 0 1,0 -48,0 a31,31 0 1,0 62,0" fill="none" stroke="#ea580c" stroke-width="4.5" stroke-linecap="round"/>
+                <circle cx="110" cy="55" r="3" fill="#9a3412"/>
+              </g>
+              <!-- پیکان‌های موجی هوای گرم بالا رونده -->
+              <g id="g1-heat-waves" opacity="0" stroke="#f97316" stroke-width="2" fill="none">
+                <path d="M85,115 Q80,102 88,92"/>
+                <path d="M110,115 Q105,100 113,88"/>
+                <path d="M135,115 Q130,102 138,92"/>
+              </g>
+              <!-- بدنه‌ی بخاری واقعی -->
+              <rect x="60" y="132" width="100" height="28" rx="6" fill="#475569" stroke="#1e293b" stroke-width="2"/>
+              <rect x="70" y="138" width="80" height="16" rx="3" fill="#1e293b"/>
+              <!-- شعله‌های واقعی گرافیکی -->
+              <g id="g1-svg-flames" opacity="0">
+                <path d="M85,152 C80,140 85,130 90,122 C95,130 100,140 95,152 Z" fill="#f97316"/>
+                <path d="M105,152 C100,136 106,124 110,116 C114,124 120,136 115,152 Z" fill="#ef4444"/>
+                <path d="M125,152 C120,140 125,130 130,122 C135,130 140,140 135,152 Z" fill="#f97316"/>
+                <path d="M107,152 C105,142 108,135 110,130 C112,135 115,142 113,152 Z" fill="#fde047"/>
+              </g>
+            </svg>
+            <div id="g1-flame-icons" style="font-size:0.9rem; font-weight:bold; color:#9a3412; margin-top:4px;">وضعیت بخاری: خاموش</div>
+          </div>
+          <div style="margin-top:10px;">
+            <button type="button" class="btn btn-sm g1-flame-btn" data-heat="0" style="background:#64748b; color:#fff;">خاموش ⬛</button>
+            <button type="button" class="btn btn-sm g1-flame-btn" data-heat="1" style="background:#f97316; color:#fff;">شعله کم 🔥</button>
+            <button type="button" class="btn btn-sm g1-flame-btn" data-heat="2" style="background:#dc2626; color:#fff;">شعله زیاد 🔥🔥🔥</button>
+          </div>
+        </div>
+
+        <div id="g1-q3-box" class="question-box hidden">
+          <div class="question-title">سؤال: «در این آزمایش، انرژی از کدام شکل به کدام شکل تبدیل شد؟»</div>
+          <button type="button" class="option-btn" data-correct="false">از حرکتی به گرمایی</button>
+          <button type="button" class="option-btn" data-correct="false">از نورانی به صوتی</button>
+          <button type="button" class="option-btn" data-correct="true">از گرمایی به حرکتی 🔥➡️🌪️</button>
+          <div id="g1-q3-fb" class="feedback-msg hidden"></div>
+          <button type="button" class="btn btn-success hidden" id="g1-next-3">ایستگاه بعدی ⬅️</button>
+        </div>
+      </div>
+
+      <!-- ایستگاه ۴: طبل صدا -->
+      <div id="g1-st4" class="g1-station hidden">
+        <h3 class="card-title">۴. 🥁 طبل صدا (ص ۲۳)</h3>
+        <div class="sim-stage">
+          <p style="margin:0 0 10px; font-size:0.9rem;">روی ظرف فلزی بادکنک کشیده‌ایم و رویش دانه‌های برنج ریخته‌ایم. اول «ضربه آرام» و بعد «ضربه محکم» بزن!</p>
+          <div style="background:#f5f3ff; border-radius:12px; padding:10px; border:1px solid #ddd6fe;">
+            <svg viewBox="0 0 260 145" width="100%" height="145" style="max-width:290px; margin:0 auto; display:block;">
+              <!-- امواج صوتی هنگام ضربه -->
+              <g id="g1-sound-waves" opacity="0" stroke="#9333ea" stroke-width="2" fill="none">
+                <path d="M62,70 Q50,82 62,94"/>
+                <path d="M52,62 Q36,82 52,102"/>
+              </g>
+              <!-- ظرف استوانه‌ای فلزی -->
+              <path d="M85,78 L85,130 C85,138 185,138 185,130 L185,78 Z" fill="#cbd5e1" stroke="#475569" stroke-width="2"/>
+              <path d="M95,82 L95,128" stroke="#f8fafc" stroke-width="3" opacity="0.7"/>
+              <!-- روکش بادکنک کشیده شده روی دهانه ظرف -->
+              <ellipse id="g1-drum-head" cx="135" cy="78" rx="52" ry="11" fill="#ec4899" stroke="#be185d" stroke-width="2.5"/>
+              <path d="M83,78 C83,86 187,86 187,78 L187,83 C187,91 83,91 83,83 Z" fill="#db2777"/>
+              <!-- دانه‌های واقعی برنج بیضی‌شکل روی بادکنک -->
+              <g id="g1-rice-group" style="transition: transform 0.22s ease-out;">
+                <ellipse cx="110" cy="75" rx="4.5" ry="2.2" transform="rotate(-15 110 75)" fill="#ffffff" stroke="#94a3b8" stroke-width="1"/>
+                <ellipse cx="122" cy="78" rx="4.5" ry="2.2" transform="rotate(10 122 78)" fill="#ffffff" stroke="#94a3b8" stroke-width="1"/>
+                <ellipse cx="135" cy="74" rx="4.5" ry="2.2" transform="rotate(-8 135 74)" fill="#ffffff" stroke="#94a3b8" stroke-width="1"/>
+                <ellipse cx="148" cy="77" rx="4.5" ry="2.2" transform="rotate(18 148 77)" fill="#ffffff" stroke="#94a3b8" stroke-width="1"/>
+                <ellipse cx="160" cy="75" rx="4.5" ry="2.2" transform="rotate(-20 160 75)" fill="#ffffff" stroke="#94a3b8" stroke-width="1"/>
+                <ellipse cx="128" cy="80" rx="4.5" ry="2.2" transform="rotate(5 128 80)" fill="#ffffff" stroke="#94a3b8" stroke-width="1"/>
+                <ellipse cx="142" cy="80" rx="4.5" ry="2.2" transform="rotate(-12 142 80)" fill="#ffffff" stroke="#94a3b8" stroke-width="1"/>
+              </g>
+            </svg>
+          </div>
+          <div style="margin-top:10px;">
+            <button type="button" class="btn btn-sm" id="g1-hit-soft" style="background:#8b5cf6; color:#fff;">🥄 ضربه آرام</button>
+            <button type="button" class="btn btn-sm" id="g1-hit-hard" style="background:#db2777; color:#fff;">🥁 ضربه محکم!</button>
+          </div>
+        </div>
+
+        <div id="g1-q4-box" class="question-box hidden">
+          <div class="question-title">سؤال: «دانه‌های برنج چرا به هوا پریدند؟»</div>
+          <button type="button" class="option-btn" data-correct="false">چون باد آمد 🌪️</button>
+          <button type="button" class="option-btn" data-correct="true">چون صدا انرژی دارد و بادکنک را لرزاند 🔊</button>
+          <button type="button" class="option-btn" data-correct="false">چون لیوان خودش تکان خورد</button>
+          <div id="g1-q4-fb" class="feedback-msg hidden"></div>
+          <button type="button" class="btn btn-success hidden" id="g1-finish-btn">مشاهده نتیجه و دریافت گزارش 🎉</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- صفحه پایان بازی ۱ -->
+    <div id="g1-end-view" class="card hidden">
+      <h2 class="card-title">آفرین دانشمند کوچولو! 🎉</h2>
+      <p id="g1-end-stars-line" style="font-size:1.15rem; font-weight:bold; color:#d97706;"></p>
+      <pre class="report-pre" id="g1-end-report"></pre>
+      <button type="button" class="btn btn-primary" id="g1-end-copy-btn">📋 کپی گزارش</button>
+      <div id="g1-end-msg" class="inline-msg hidden"></div>
+    </div>
+  </section>
+
+  <!-- ==================== بازی ۲: مأموریت مخلوط‌ها ==================== -->
+  <section id="g2-section" class="game-section hidden">
+    <div class="top-bar">
+      <button type="button" class="btn-back" id="g2-back-btn">🔙 برگشت به منو</button>
+      <div class="stars-bar" id="g2-top-stars">⭐ ۰ از ۴</div>
+    </div>
+
+    <!-- صفحه قفل بازی ۲ -->
+    <div id="g2-lock-view" class="card hidden">
+      <h2 class="card-title lock-title-tap" id="g2-lock-title">🔒 مأموریت مخلوط‌ها قبلاً کامل شده است</h2>
+      <p style="margin:0 0 8px; color:#475569; font-size:0.92rem;">نتیجه‌ی ثبت‌شده‌ی شما در این گوشی:</p>
+      <div id="g2-lock-summary" style="font-weight:bold; color:#0f172a; margin-bottom:8px;"></div>
+      <pre class="report-pre" id="g2-lock-report"></pre>
+      <button type="button" class="btn btn-primary" id="g2-lock-copy-btn">📋 کپی گزارش</button>
+      <div id="g2-lock-msg" class="inline-msg hidden"></div>
+      <div id="g2-teacher-reset-box" class="hidden" style="margin-top:12px; background:#fff1f2; border:2px solid #f43f5e; padding:12px; border-radius:12px; text-align:center;">
+        <p style="margin:0 0 8px; font-weight:bold; color:#9f1239;">پنل مخفی آموزگار: آیا قفل این بازی پاک شود؟</p>
+        <button type="button" class="btn btn-sm" style="background:#e11d48; color:#fff;" id="g2-confirm-reset-btn">بله، قفل پاک شود</button>
+        <button type="button" class="btn btn-sm" style="background:#64748b; color:#fff;" id="g2-cancel-reset-btn">انصراف</button>
+      </div>
+    </div>
+
+    <!-- صفحه شروع بازی ۲ -->
+    <div id="g2-start-view" class="card">
+      <h2 class="card-title">🧪 مأموریت مخلوط‌ها (مرور علوم درس ۱)</h2>
+      <p>دانشمند عزیز، اسمت رو بنویس تا وارد آزمایشگاه مخلوط‌ها بشیم:</p>
+      <input type="text" id="g2-name-input" class="input-field" placeholder="اسمت رو بنویس..." autocomplete="off">
+      <div id="g2-name-err" class="feedback-msg feedback-err hidden">لطفاً اول اسمت رو بنویس!</div>
+      <button type="button" class="btn btn-primary" id="g2-start-btn">شروع مأموریت 🚀</button>
+    </div>
+
+    <!-- صفحه درسنامه بازی ۲ -->
+    <div id="g2-dars-view" class="card hidden">
+      <h2 class="card-title">📖 درسنامه: مأموریت مخلوط‌ها</h2>
+      <div class="darsname-box">
+        <ul style="margin:0; padding-right:18px;">
+          <li>مخلوط یعنی دو یا چند ماده که با هم قاطی شده‌اند ولی هر کدام خاصیت خودشان را دارند.</li>
+          <li>🫗 مخلوط یکنواخت (شفاف): مثل آب و نمک، آب و قند و شربت — ذره‌هایش دیده نمی‌شود.</li>
+          <li>🥛 مخلوط غیریک‌نواخت: مثل دوغ و آب و خاک — ته‌نشین می‌شود و شفاف نیست.</li>
+          <li>⚡ هرچه تکه‌ها کوچک‌تر باشند، سریع‌تر حل می‌شوند (پودر نبات زودتر از شاخه نبات!).</li>
+          <li>🌡️ هرچه آب داغ‌تر باشد، شکر سریع‌تر حل می‌شود.</li>
+          <li>🫗 برای جدا کردن مخلوط: صافی (ماسه از آب‌نمک جدا می‌شود) و تبخیر (با بخار شدن آب، نمک می‌ماند).</li>
+        </ul>
+      </div>
+      <button type="button" class="btn btn-success" id="g2-enter-lab-btn">ورود به بازی و آزمایشگاه 🧪</button>
+    </div>
+
+    <!-- صفحه ایستگاه‌های بازی ۲ -->
+    <div id="g2-play-view" class="card hidden">
+      <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:10px;">
+        <span id="g2-station-badge" style="background:#cffafe; color:#155e75; padding:4px 12px; border-radius:99px; font-weight:bold; font-size:0.88rem;">ایستگاه ۱ از ۴</span>
+        <span id="g2-player-label" style="font-size:0.88rem; color:#475569;"></span>
+      </div>
+
+      <!-- ایستگاه ۱: مسابقه حل شدن نبات -->
+      <div id="g2-st1" class="g2-station">
+        <h3 class="card-title">۱. 🍬 مسابقه حل شدن نبات (ص ۹ و ۱۰)</h3>
+        <div class="sim-stage">
+          <p style="margin:0 0 8px; font-size:0.9rem;">روی دکمه‌ی هر سه لیوان بزن تا نبات‌ها در آب حل شوند و زمان‌سنج هر کدام را ببین:</p>
+          <div class="cups-row">
+            <div class="cup-card">
+              <div style="font-weight:bold; font-size:0.84rem;">شاخه نبات</div>
+              <svg viewBox="0 0 80 90" width="66" height="76" style="margin:4px auto; display:block;">
+                <path d="M14,12 L18,80 C18,84 62,84 62,80 L66,12" fill="none" stroke="#0284c7" stroke-width="3"/>
+                <path d="M16,30 L18,79 C18,82 62,82 62,79 L64,30 Z" fill="#bae6fd" opacity="0.65"/>
+                <!-- چوب شاخه نبات -->
+                <line x1="40" y1="6" x2="40" y2="76" stroke="#a16207" stroke-width="2.5"/>
+                <!-- بلورهای درشت شاخه نبات -->
+                <g id="g2-nabat-p1" style="transition: opacity 0.2s;">
+                  <polygon points="30,42 40,35 50,42 46,68 34,68" fill="#fde047" stroke="#ca8a04" stroke-width="1.5"/>
+                  <polygon points="28,52 40,46 52,54 48,74 32,74" fill="#fef08a" stroke="#ca8a04" stroke-width="1.5"/>
+                </g>
+              </svg>
+              <div id="g2-nabat-t1" style="font-size:0.82rem; font-weight:bold; color:#0369a1;">⏱️ ۰ ثانیه</div>
+              <button type="button" class="btn btn-sm btn-primary" id="g2-nabat-btn1" style="width:95%; padding:6px; font-size:0.78rem;">شاخه نبات</button>
+            </div>
+            <div class="cup-card">
+              <div style="font-weight:bold; font-size:0.84rem;">خرده نبات</div>
+              <svg viewBox="0 0 80 90" width="66" height="76" style="margin:4px auto; display:block;">
+                <path d="M14,12 L18,80 C18,84 62,84 62,80 L66,12" fill="none" stroke="#0284c7" stroke-width="3"/>
+                <path d="M16,30 L18,79 C18,82 62,82 62,79 L64,30 Z" fill="#bae6fd" opacity="0.65"/>
+                <!-- تکه‌های خردشده نبات ته لیوان -->
+                <g id="g2-nabat-p2" style="transition: opacity 0.2s;">
+                  <polygon points="24,72 31,66 36,74 28,78" fill="#fde047" stroke="#ca8a04" stroke-width="1.2"/>
+                  <polygon points="38,70 46,65 50,73 42,78" fill="#fef08a" stroke="#ca8a04" stroke-width="1.2"/>
+                  <polygon points="48,73 55,68 58,76 50,78" fill="#fde047" stroke="#ca8a04" stroke-width="1.2"/>
+                </g>
+              </svg>
+              <div id="g2-nabat-t2" style="font-size:0.82rem; font-weight:bold; color:#0369a1;">⏱️ ۰ ثانیه</div>
+              <button type="button" class="btn btn-sm btn-primary" id="g2-nabat-btn2" style="width:95%; padding:6px; font-size:0.78rem;">خرده نبات</button>
+            </div>
+            <div class="cup-card">
+              <div style="font-weight:bold; font-size:0.84rem;">پودر نبات</div>
+              <svg viewBox="0 0 80 90" width="66" height="76" style="margin:4px auto; display:block;">
+                <path d="M14,12 L18,80 C18,84 62,84 62,80 L66,12" fill="none" stroke="#0284c7" stroke-width="3"/>
+                <path d="M16,30 L18,79 C18,82 62,82 62,79 L64,30 Z" fill="#bae6fd" opacity="0.65"/>
+                <!-- ذرات ریز پودر نبات -->
+                <g id="g2-nabat-p3" fill="#ca8a04" style="transition: opacity 0.2s;">
+                  <circle cx="26" cy="75" r="2"/>
+                  <circle cx="32" cy="73" r="1.8"/>
+                  <circle cx="38" cy="76" r="2"/>
+                  <circle cx="44" cy="74" r="1.8"/>
+                  <circle cx="50" cy="76" r="2"/>
+                  <circle cx="55" cy="73" r="1.8"/>
+                  <circle cx="35" cy="70" r="1.6"/>
+                  <circle cx="47" cy="70" r="1.6"/>
+                </g>
+              </svg>
+              <div id="g2-nabat-t3" style="font-size:0.82rem; font-weight:bold; color:#0369a1;">⏱️ ۰ ثانیه</div>
+              <button type="button" class="btn btn-sm btn-primary" id="g2-nabat-btn3" style="width:95%; padding:6px; font-size:0.78rem;">پودر نبات</button>
+            </div>
+          </div>
+        </div>
+
+        <div id="g2-q1-box" class="question-box hidden">
+          <div class="question-title">سؤال: «کدام نبات سریع‌تر در آب حل شد؟»</div>
+          <button type="button" class="option-btn" data-correct="false">شاخه نبات 🍬</button>
+          <button type="button" class="option-btn" data-correct="false">خرده نبات 🍬</button>
+          <button type="button" class="option-btn" data-correct="true">پودر نبات ✨</button>
+          <div id="g2-q1-fb" class="feedback-msg hidden"></div>
+          <button type="button" class="btn btn-success hidden" id="g2-next-1">ایستگاه بعدی ⬅️</button>
+        </div>
+      </div>
+
+      <!-- ایستگاه ۲: شکر در آب سرد و داغ -->
+      <div id="g2-st2" class="g2-station hidden">
+        <h3 class="card-title">۲. 🌡️ شکر در آب سرد و داغ (ص ۱۰ و ۱۱)</h3>
+        <div class="sim-stage">
+          <p style="margin:0 0 8px; font-size:0.9rem;">دکمه‌ی «شکر بریز و هم بزن» را بزن تا زمان حل شدن شکر در ۳ دمای مختلف و نمودار ستونی زنده را ببینی:</p>
+          <div class="cups-row">
+            <div class="cup-card">
+              <div style="font-weight:bold; font-size:0.84rem;">آب سرد 🧊</div>
+              <svg viewBox="0 0 80 90" width="66" height="76" style="margin:4px auto; display:block;">
+                <path d="M14,14 L18,80 C18,84 62,84 62,80 L66,14" fill="none" stroke="#0284c7" stroke-width="3"/>
+                <path d="M16,28 L18,79 C18,82 62,82 62,79 L64,28 Z" fill="#7dd3fc" opacity="0.6"/>
+                <!-- قطعات یخ واقعی -->
+                <rect x="24" y="30" width="12" height="10" rx="2" fill="#e0f2fe" stroke="#0284c7" stroke-width="1"/>
+                <rect x="42" y="32" width="12" height="10" rx="2" fill="#e0f2fe" stroke="#0284c7" stroke-width="1"/>
+                <g id="g2-temp-p1" fill="#ffffff" stroke="#64748b" stroke-width="1" style="transition: opacity 0.2s;">
+                  <rect x="26" y="72" width="5" height="5"/>
+                  <rect x="35" y="73" width="5" height="5"/>
+                  <rect x="44" y="72" width="5" height="5"/>
+                  <rect x="51" y="74" width="5" height="5"/>
+                </g>
+              </svg>
+              <div id="g2-temp-t1" style="font-size:0.82rem; font-weight:bold;">⏱️ ۰ ثانیه</div>
+            </div>
+            <div class="cup-card">
+              <div style="font-weight:bold; font-size:0.84rem;">نیم‌گرم 🌤️</div>
+              <svg viewBox="0 0 80 90" width="66" height="76" style="margin:4px auto; display:block;">
+                <path d="M14,14 L18,80 C18,84 62,84 62,80 L66,14" fill="none" stroke="#0284c7" stroke-width="3"/>
+                <path d="M16,28 L18,79 C18,82 62,82 62,79 L64,28 Z" fill="#bae6fd" opacity="0.65"/>
+                <g id="g2-temp-p2" fill="#ffffff" stroke="#64748b" stroke-width="1" style="transition: opacity 0.2s;">
+                  <rect x="26" y="72" width="5" height="5"/>
+                  <rect x="35" y="73" width="5" height="5"/>
+                  <rect x="44" y="72" width="5" height="5"/>
+                  <rect x="51" y="74" width="5" height="5"/>
+                </g>
+              </svg>
+              <div id="g2-temp-t2" style="font-size:0.82rem; font-weight:bold;">⏱️ ۰ ثانیه</div>
+            </div>
+            <div class="cup-card">
+              <div style="font-weight:bold; font-size:0.84rem;">آب داغ 🔥</div>
+              <svg viewBox="0 0 80 90" width="66" height="76" style="margin:4px auto; display:block;">
+                <!-- بخار بالای لیوان آب داغ -->
+                <path d="M30,18 Q26,10 32,4" fill="none" stroke="#f97316" stroke-width="1.8" stroke-linecap="round"/>
+                <path d="M48,18 Q44,10 50,4" fill="none" stroke="#f97316" stroke-width="1.8" stroke-linecap="round"/>
+                <path d="M14,14 L18,80 C18,84 62,84 62,80 L66,14" fill="none" stroke="#ea580c" stroke-width="3"/>
+                <path d="M16,28 L18,79 C18,82 62,82 62,79 L64,28 Z" fill="#fed7aa" opacity="0.65"/>
+                <g id="g2-temp-p3" fill="#ffffff" stroke="#64748b" stroke-width="1" style="transition: opacity 0.2s;">
+                  <rect x="26" y="72" width="5" height="5"/>
+                  <rect x="35" y="73" width="5" height="5"/>
+                  <rect x="44" y="72" width="5" height="5"/>
+                  <rect x="51" y="74" width="5" height="5"/>
+                </g>
+              </svg>
+              <div id="g2-temp-t3" style="font-size:0.82rem; font-weight:bold;">⏱️ ۰ ثانیه</div>
+            </div>
+          </div>
+
+          <div style="font-size:0.8rem; color:#475569; margin-top:6px;">نمودار ستونی زنده (مدت زمان حل شدن):</div>
+          <div class="bar-chart">
+            <div class="bar-col">
+              <div id="g2-bar-1" class="bar-fill" style="height:4px; background:#0284c7;"></div>
+              <div class="bar-label">سرد</div>
+            </div>
+            <div class="bar-col">
+              <div id="g2-bar-2" class="bar-fill" style="height:4px; background:#eab308;"></div>
+              <div class="bar-label">نیم‌گرم</div>
+            </div>
+            <div class="bar-col">
+              <div id="g2-bar-3" class="bar-fill" style="height:4px; background:#ef4444;"></div>
+              <div class="bar-label">داغ</div>
+            </div>
+          </div>
+
+          <button type="button" class="btn btn-amber" id="g2-stir-sugar-btn">🥄 شکر بریز و هم بزن</button>
+        </div>
+
+        <div id="g2-q2-box" class="question-box hidden">
+          <div class="question-title">سؤال: «شکر در کدام آب سریع‌تر حل شد؟»</div>
+          <button type="button" class="option-btn" data-correct="false">آب سرد 🧊</button>
+          <button type="button" class="option-btn" data-correct="false">آب نیم‌گرم 🌤️</button>
+          <button type="button" class="option-btn" data-correct="true">آب داغ 🔥</button>
+          <div id="g2-q2-fb" class="feedback-msg hidden"></div>
+          <button type="button" class="btn btn-success hidden" id="g2-next-2">ایستگاه بعدی ⬅️</button>
+        </div>
+      </div>
+
+      <!-- ایستگاه ۳: صافی جادویی -->
+      <div id="g2-st3" class="g2-station hidden">
+        <h3 class="card-title">۳. 🫗 صافی جادویی (ص ۱۲)</h3>
+        <div class="sim-stage">
+          <p style="margin:0 0 8px; font-size:0.9rem;">لیوان (آ) شامل <strong>نمک + ماسه + آب</strong> است. دکمه‌ی زیر را بزن تا مخلوط را داخل قیف و کاغذ صافی مخروطی بریزیم:</p>
+          <div style="background:#ffffff; border:2px solid #cbd5e1; border-radius:14px; padding:12px; margin:10px 0;">
+            <div id="g2-filter-top" style="font-size:0.9rem; font-weight:bold; color:#78350f; margin-bottom:6px;">لیوان (آ): آب + نمک حل‌شده + ماسه</div>
+            <svg viewBox="0 0 240 190" width="100%" height="190" style="max-width:260px; margin:0 auto; display:block;">
+              <!-- قیف آزمایشگاهی شیشه‌ای -->
+              <polygon points="65,25 175,25 128,95 128,132 112,132 112,95" fill="#e0f2fe" opacity="0.55" stroke="#0284c7" stroke-width="2.5"/>
+              <!-- کاغذ صافی مخروطی واقعی داخل قیف -->
+              <polygon points="73,28 167,28 120,96" fill="#fefce8" stroke="#ca8a04" stroke-width="2"/>
+              <line x1="120" y1="28" x2="120" y2="96" stroke="#fde047" stroke-width="1.5"/>
+              <!-- ذرات ماسه مانده روی کاغذ صافی مخروطی -->
+              <g id="g2-filter-sand" class="hidden">
+                <path d="M98,64 L142,64 L120,94 Z" fill="#b45309"/>
+                <circle cx="114" cy="70" r="2.5" fill="#78350f"/>
+                <circle cx="125" cy="73" r="2.5" fill="#92400e"/>
+                <circle cx="119" cy="80" r="2.5" fill="#78350f"/>
+                <text x="178" y="65" font-size="11" fill="#92400e" font-weight="bold">ماسه روی صافی</text>
+              </g>
+              <!-- قطرات آب‌نمک عبوری از لوله قیف -->
+              <g id="g2-filter-drops" class="hidden" fill="#0284c7">
+                <circle cx="120" cy="140" r="3"/>
+                <circle cx="120" cy="152" r="3"/>
+              </g>
+              <!-- بشر پایین صافی -->
+              <path d="M80,122 L84,180 C84,184 156,184 156,180 L160,122" fill="none" stroke="#334155" stroke-width="2.5"/>
+              <!-- آب‌نمک شفاف جمع شده در بشر پایین -->
+              <path id="g2-filtrate-liquid" class="hidden" d="M83,156 L84,179 C84,182 156,182 156,179 L157,156 Z" fill="#bae6fd" opacity="0.8"/>
+            </svg>
+            <div id="g2-filter-bottom" style="margin-top:6px; padding:8px; border-radius:10px; background:#e0f2fe; color:#0369a1; font-size:0.88rem; font-weight:bold;">ظرف پایین صافی: (خالی)</div>
+          </div>
+          <button type="button" class="btn btn-primary" id="g2-pour-filter-btn">🫗 روی صافی بریز</button>
+        </div>
+
+        <div id="g2-q3-box" class="question-box hidden">
+          <div class="question-title">سؤال: «با صافی کدام ماده را جدا کردیم؟»</div>
+          <button type="button" class="option-btn" data-correct="false">نمک 🧂</button>
+          <button type="button" class="option-btn" data-correct="true">ماسه ⏳</button>
+          <button type="button" class="option-btn" data-correct="false">آب 💧</button>
+          <div id="g2-q3-fb" class="feedback-msg hidden"></div>
+          <button type="button" class="btn btn-success hidden" id="g2-next-3">ایستگاه بعدی ⬅️</button>
+        </div>
+      </div>
+
+      <!-- ایستگاه ۴: کارآگاه مخلوط‌ها -->
+      <div id="g2-st4" class="g2-station hidden">
+        <h3 class="card-title">۴. 🔍 کارآگاه مخلوط‌ها (فعالیت کتاب ص ۸ و ۹)</h3>
+        <div class="sim-stage">
+          <p style="margin:0 0 8px; font-size:0.9rem;">هر ۴ مخلوط را بررسی کن و بگو یکنواخت است یا غیریک‌نواخت (حداقل ۳ از ۴ درست = دریافت ستاره ⭐):</p>
+          <div id="g2-det-card" style="background:#fff; border:2px solid #38bdf8; border-radius:14px; padding:16px; margin:10px 0;">
+            <div id="g2-det-step" style="font-size:0.82rem; color:#64748b; margin-bottom:4px;">مورد ۱ از ۴</div>
+            <div id="g2-det-title" style="font-size:1.3rem; font-weight:bold; color:#0f172a; margin-bottom:14px;">آب و نمک 🧂</div>
+            <button type="button" class="btn btn-primary" id="g2-det-uni-btn" style="margin-bottom:8px;">🫗 یکنواخت و شفاف</button>
+            <button type="button" class="btn btn-amber" id="g2-det-non-btn">🥛 غیریک‌نواخت (ته‌نشین می‌شود)</button>
+          </div>
+          <div id="g2-det-fb" class="feedback-msg hidden"></div>
+          <button type="button" class="btn btn-primary hidden" id="g2-det-retry-btn">🔄 تلاش مجدد از اول</button>
+          <button type="button" class="btn btn-success hidden" id="g2-finish-btn">پایان آزمایشگاه و دریافت گزارش 🎉</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- صفحه پایان بازی ۲ -->
+    <div id="g2-end-view" class="card hidden">
+      <h2 class="card-title">آفرین دانشمند مخلوط‌ها! 🎉</h2>
+      <p id="g2-end-stars-line" style="font-size:1.15rem; font-weight:bold; color:#d97706;"></p>
+      <pre class="report-pre" id="g2-end-report"></pre>
+      <button type="button" class="btn btn-primary" id="g2-end-copy-btn">📋 کپی گزارش</button>
+      <div id="g2-end-msg" class="inline-msg hidden"></div>
+    </div>
+  </section>
+
+  <!-- ==================== بازی ۳: قرآن جلسه ۱ ==================== -->
+  <section id="g3-section" class="game-section hidden">
+    <div class="top-bar">
+      <button type="button" class="btn-back" id="g3-back-btn">🔙 برگشت به منو</button>
+      <div class="stars-bar" id="g3-top-stars">⭐ قرآن جلسه ۱</div>
+    </div>
+
+    <!-- صفحه قفل بازی ۳ -->
+    <div id="g3-lock-view" class="card hidden">
+      <h2 class="card-title lock-title-tap" id="g3-lock-title">🔒 قرآن جلسه‌ی اول قبلاً کامل شده است</h2>
+      <p style="margin:0 0 8px; color:#475569; font-size:0.92rem;">نتیجه‌ی ثبت‌شده‌ی شما در این گوشی:</p>
+      <div id="g3-lock-summary" style="font-weight:bold; color:#0f172a; margin-bottom:8px;"></div>
+      <pre class="report-pre" id="g3-lock-report"></pre>
+      <button type="button" class="btn btn-primary" id="g3-lock-copy-btn">📋 کپی گزارش</button>
+      <div id="g3-lock-msg" class="inline-msg hidden"></div>
+      <div id="g3-teacher-reset-box" class="hidden" style="margin-top:12px; background:#fff1f2; border:2px solid #f43f5e; padding:12px; border-radius:12px; text-align:center;">
+        <p style="margin:0 0 8px; font-weight:bold; color:#9f1239;">پنل مخفی آموزگار: آیا قفل این بازی پاک شود؟</p>
+        <button type="button" class="btn btn-sm" style="background:#e11d48; color:#fff;" id="g3-confirm-reset-btn">بله، قفل پاک شود</button>
+        <button type="button" class="btn btn-sm" style="background:#64748b; color:#fff;" id="g3-cancel-reset-btn">انصراف</button>
+      </div>
+    </div>
+
+    <!-- صفحه شروع بازی ۳ -->
+    <div id="g3-start-view" class="card">
+      <h2 class="card-title">🕌 قرآن جلسه‌ی اول (سوره‌ی ابراهیم، آیات ۳۸ تا ۴۱)</h2>
+      <p>قرآن‌آموز عزیز، اسمت رو بنویس تا درس اول رو شروع کنیم:</p>
+      <input type="text" id="g3-name-input" class="input-field" placeholder="اسمت رو بنویس..." autocomplete="off">
+      <div id="g3-name-err" class="feedback-msg feedback-err hidden">لطفاً اول اسمت رو بنویس!</div>
+      <button type="button" class="btn btn-success" id="g3-start-btn">شروع درس قرآن 📖</button>
+    </div>
+
+    <!-- صفحه درسنامه بازی ۳ -->
+    <div id="g3-dars-view" class="card hidden">
+      <h2 class="card-title">📖 درسنامه: سوره‌ی ابراهیم (آیات ۳۸ تا ۴۱)</h2>
+      <div class="darsname-box">
+        <p style="margin-top:0; font-weight:bold;">- این آیات، دعاهای حضرت ابراهیم (ع) است.</p>
+        <p style="margin-bottom:6px; font-weight:bold;">- متن آیات:</p>
+        <div class="quran-ayat">
+          رَبَّنَا إِنَّكَ تَعْلَمُ مَا نُخْفِی وَمَا نُعْلِنُ ۗ وَمَا یَخْفَىٰ عَلَى اللَّهِ مِن شَیْءٍ فِی الْأَرْضِ وَلَا فِی السَّمَاءِ ﴿۳۸﴾<br>
+          الْحَمْدُ لِلَّهِ الَّذِی وَهَبَ لِی عَلَى الْکِبَرِ إِسْمَاعِیلَ وَإِسْحَاقَ ۚ إِنَّ رَبِّی لَسَمِیعُ الدُّعَاءِ ﴿۳۹﴾<br>
+          رَبِّ اجْعَلْنِی مُقِیمَ الصَّلَاةِ وَمِن ذُرِّیَّتِی ۚ رَبَّنَا وَتَقَبَّلْ دُعَاءِ ﴿۴۰﴾<br>
+          رَبَّنَا اغْفِرْ لِی وَلِوَالِدَیَّ وَلِلْمُؤْمِنِینَ یَوْمَ یَقُومُ الْحِسَابُ ﴿۴۱﴾
+        </div>
+        <p><strong>- پیام قرآنی (آیه ۴۱):</strong> «پروردگارا من و پدر و مادرم و مؤمنان را بیامرز، در روزی که به حساب مردم رسیدگی می‌شود (یعنی روز قیامت).» خوب است این دعا را حفظ کنیم و در قنوت نمازها بخوانیم.</p>
+        <p style="margin-bottom:0;"><strong>- معنی کلمات:</strong> رَبَّنا = پروردگارا • مُؤمِنین = مؤمنان • یَوم = روز • حِساب = به حساب رسیدگی. (تذکر: این ترجمه‌ها برای مطالعه‌ی آزاد است و نیازی به حفظ نیست.)</p>
+      </div>
+      <button type="button" class="btn btn-primary" id="g3-to-practice-btn">ادامه: تمرین خواندن ⬅️</button>
+    </div>
+
+    <!-- صفحه تمرین خواندن بازی ۳ -->
+    <div id="g3-practice-view" class="card hidden">
+      <h2 class="card-title">🗣️ تمرین خواندن</h2>
+      <div class="darsname-box" style="background:#eff6ff; border-color:#93c5fd; color:#1e3a8a;">
+        <p><strong>- قاعده‌ی وقف:</strong> در آخر جمله، هنگام وقف حرکت آخر خوانده نمی‌شود (مثلاً «فِی السَّمَاءِ» را «فِی السَّمَاء» می‌خوانیم).</p>
+        <p><strong>- حروف ناخوانا:</strong> الف بعد از واو آخر خوانده نمی‌شود (قالوا، آمَنوا)؛ واوِ پایه‌ی همزه خوانده نمی‌شود (مُؤمِنین)؛ یاءِ پایه‌ی همزه خوانده نمی‌شود؛ الف بعد از تنوین خوانده نمی‌شود (غَفورًا)؛ یاء بعد از تنوین فتحه خوانده نمی‌شود (هُدیً)؛ یائی که رویش الف کوچک است مثل الف خوانده می‌شود (عَلیٰ، إلیٰ).</p>
+        <p style="margin-bottom:0; font-weight:bold; color:#1d4ed8;">- تمرین: آیات ۳۸ تا ۴۱ را جمله‌به‌جمله و شمرده از روی کتاب بخوان.</p>
+      </div>
+      <button type="button" class="btn btn-success" id="g3-to-quiz-btn">آیات را خواندم، ورود به سؤالات ✅</button>
+    </div>
+
+    <!-- صفحه سؤالات بازی ۳ -->
+    <div id="g3-quiz-view" class="card hidden">
+      <h2 class="card-title">❓ سؤالات درس اول قرآن</h2>
+
+      <!-- سؤال ۱ -->
+      <div id="g3-q1-wrap" class="question-box">
+        <div class="question-title">۱. «پیام قرآنی درس اول (آیه ۴۱ سوره ابراهیم) چه دعایی است؟»</div>
+        <button type="button" class="option-btn g3-q1-opt" data-correct="true">الف) «پروردگارا من و پدر و مادرم و مؤمنان را بیامرز، در روزی که به حساب مردم رسیدگی می‌شود»</button>
+        <button type="button" class="option-btn g3-q1-opt" data-correct="false">ب) «پروردگارا به من پول و ثروت زیاد بده»</button>
+        <button type="button" class="option-btn g3-q1-opt" data-correct="false">ج) «پروردگارا فقط مرا بیامرز و دیگران را نه»</button>
+        <button type="button" class="option-btn g3-q1-opt" data-correct="false">د) «پروردگارا باران بباران»</button>
+        <div id="g3-q1-fb" class="feedback-msg hidden"></div>
+      </div>
+
+      <!-- سؤال ۲ -->
+      <div id="g3-q2-wrap" class="question-box" style="margin-top:16px;">
+        <div class="question-title">۲. «وقتی در آخر جمله وقف می‌کنیم، حرکت آخر چه می‌شود؟»</div>
+        <button type="button" class="option-btn g3-q2-opt" data-correct="false">الف) با حرکت خوانده می‌شود</button>
+        <button type="button" class="option-btn g3-q2-opt" data-correct="true">ب) خوانده نمی‌شود</button>
+        <button type="button" class="option-btn g3-q2-opt" data-correct="false">ج) دو بار خوانده می‌شود</button>
+        <button type="button" class="option-btn g3-q2-opt" data-correct="false">د) به جمله‌ی بعد وصل می‌شود</button>
+        <div id="g3-q2-fb" class="feedback-msg hidden"></div>
+      </div>
+
+      <button type="button" class="btn btn-success hidden" id="g3-finish-btn" style="margin-top:16px;">ثبت نتیجه و دریافت گزارش 🎉</button>
+    </div>
+
+    <!-- صفحه پایان بازی ۳ -->
+    <div id="g3-end-view" class="card hidden">
+      <h2 class="card-title">آفرین قرآن‌آموز عزیز! 🎉</h2>
+      <p id="g3-end-stars-line" style="font-size:1.15rem; font-weight:bold; color:#d97706;"></p>
+      <pre class="report-pre" id="g3-end-report"></pre>
+      <button type="button" class="btn btn-primary" id="g3-end-copy-btn">📋 کپی گزارش</button>
+      <div id="g3-end-msg" class="inline-msg hidden"></div>
+    </div>
+  </section>
+
+  <!-- ==================== بازی ۴: ریاضی — الگو و ماشین (riazi-fasl1-p11) ==================== -->
+  <section id="g4-section" class="game-section hidden">
+    <div class="top-bar">
+      <button type="button" class="btn-back" id="g4-back-btn">🔙 برگشت به منو</button>
+      <div class="stars-bar" id="g4-top-stars">⭐ ۰ از ۴</div>
+    </div>
+
+    <!-- صفحه قفل بازی ۴ -->
+    <div id="g4-lock-view" class="card hidden">
+      <h2 class="card-title lock-title-tap" id="g4-lock-title">🔒 ریاضی: الگو و ماشین قبلاً کامل شده است</h2>
+      <p style="margin:0 0 8px; color:#475569; font-size:0.92rem;">نتیجه‌ی ثبت‌شده‌ی شما در این گوشی:</p>
+      <div id="g4-lock-summary" style="font-weight:bold; color:#0f172a; margin-bottom:8px;"></div>
+      <pre class="report-pre" id="g4-lock-report"></pre>
+      <button type="button" class="btn btn-primary" id="g4-lock-copy-btn">📋 کپی گزارش</button>
+      <div id="g4-lock-msg" class="inline-msg hidden"></div>
+      <div id="g4-teacher-reset-box" class="hidden" style="margin-top:12px; background:#fff1f2; border:2px solid #f43f5e; padding:12px; border-radius:12px; text-align:center;">
+        <p style="margin:0 0 8px; font-weight:bold; color:#9f1239;">پنل مخفی آموزگار: آیا قفل این بازی پاک شود؟</p>
+        <button type="button" class="btn btn-sm" style="background:#e11d48; color:#fff;" id="g4-confirm-reset-btn">بله، قفل پاک شود</button>
+        <button type="button" class="btn btn-sm" style="background:#64748b; color:#fff;" id="g4-cancel-reset-btn">انصراف</button>
+      </div>
+    </div>
+
+    <!-- صفحه شروع بازی ۴ -->
+    <div id="g4-start-view" class="card">
+      <h2 class="card-title">🔢 ریاضی: الگو و ماشین (صفحه‌های ۱۱ و ۱۲)</h2>
+      <p>ریاضی‌دان عزیز، اسمت رو بنویس تا وارد بازی الگو و ماشین بشیم:</p>
+      <input type="text" id="g4-name-input" class="input-field" placeholder="اسمت رو بنویس..." autocomplete="off">
+      <div id="g4-name-err" class="feedback-msg feedback-err hidden">لطفاً اول اسمت رو بنویس!</div>
+      <button type="button" class="btn btn-purple" id="g4-start-btn">ادامه 🚀</button>
+    </div>
+
+    <!-- کارت یادآوری فیلم آموزشی آقا (به‌جای درسنامه) -->
+    <div id="g4-video-view" class="card hidden">
+      <h2 class="card-title">🎬 یادآوری مهم قبل از بازی</h2>
+      <div class="darsname-box" style="background:#f5f3ff; border-color:#c4b5fd; color:#4c1d95; font-size:1.08rem; text-align:center; font-weight:bold; padding:22px 16px;">
+        🎬 اول فیلم آموزشی آقا رو ببین، بعد بیا سراغ بازی!
+      </div>
+      <button type="button" class="btn btn-success" id="g4-enter-game-btn">شروع بازی 🔢</button>
+    </div>
+
+    <!-- صفحه ایستگاه‌های بازی ۴ -->
+    <div id="g4-play-view" class="card hidden">
+      <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:10px;">
+        <span id="g4-station-badge" style="background:#ede9fe; color:#5b21b6; padding:4px 12px; border-radius:99px; font-weight:bold; font-size:0.88rem;">ایستگاه ۱ از ۴</span>
+        <span id="g4-player-label" style="font-size:0.88rem; color:#475569;"></span>
+      </div>
+
+      <!-- ایستگاه ۱: ماشین ورودی-خروجی -->
+      <div id="g4-st1" class="g4-station">
+        <h3 class="card-title">۱. ⚙️ ماشین ورودی-خروجی (تعاملی)</h3>
+        <div class="sim-stage" style="background:#f5f3ff; border-color:#c4b5fd;">
+          <p style="margin:0 0 8px; font-size:0.88rem;">هر عدد که وارد ماشین شود، طبق قانونِ روی ماشین تغییر می‌کند و خارج می‌شود:</p>
+          <svg viewBox="0 0 280 90" width="100%" height="90" style="max-width:300px; margin:0 auto; display:block;">
+            <!-- قیف ورودی -->
+            <polygon points="20,30 65,30 65,60 20,60" fill="#ddd6fe" stroke="#7c3aed" stroke-width="2"/>
+            <text id="g4-mach-in-txt" x="42" y="50" text-anchor="middle" font-size="16" font-weight="bold" fill="#4c1d95">۷</text>
+            <!-- بدنه ماشین -->
+            <rect x="65" y="16" width="145" height="58" rx="12" fill="#7c3aed" stroke="#4c1d95" stroke-width="2.5"/>
+            <text id="g4-mach-rule-txt" x="137" y="51" text-anchor="middle" font-size="16" font-weight="bold" fill="#ffffff">ماشین ×۲</text>
+            <!-- لوله خروجی -->
+            <polygon points="210,30 260,30 260,60 210,60" fill="#fef08a" stroke="#ca8a04" stroke-width="2"/>
+            <text id="g4-mach-out-txt" x="235" y="50" text-anchor="middle" font-size="16" font-weight="bold" fill="#854d0e">؟</text>
+          </svg>
+        </div>
+
+        <div class="question-box">
+          <div id="g4-st1-step" style="font-size:0.82rem; color:#1e40af; margin-bottom:4px;">سؤال ۱ از ۳</div>
+          <div class="question-title" id="g4-st1-qtitle"></div>
+          <div id="g4-st1-opts"></div>
+          <div id="g4-st1-fb" class="feedback-msg hidden"></div>
+          <button type="button" class="btn btn-primary hidden" id="g4-st1-next-sub">سؤال بعدی ماشین ⬅️</button>
+          <button type="button" class="btn btn-success hidden" id="g4-next-1">ایستگاه بعدی ⬅️</button>
+        </div>
+      </div>
+
+      <!-- ایستگاه ۲: محیط مثلث متساوی‌الاضلاع -->
+      <div id="g4-st2" class="g4-station hidden">
+        <h3 class="card-title">۲. 📐 محیط مثلث متساوی‌الاضلاع</h3>
+        <div class="sim-stage" style="background:#eff6ff; border-color:#93c5fd;">
+          <p style="margin:0 0 6px; font-weight:bold; color:#1e3a8a;">قانون: «طول ضلع × ۳ = محیط»</p>
+          <svg viewBox="0 0 180 115" width="150" height="105" style="margin:0 auto; display:block;">
+            <polygon points="90,12 35,98 145,98" fill="#dbeafe" stroke="#2563eb" stroke-width="3"/>
+            <text id="g4-tri-side-lbl" x="90" y="112" text-anchor="middle" font-size="13" font-weight="bold" fill="#1e3a8a">طول هر ضلع: ۲</text>
+          </svg>
+        </div>
+
+        <div class="question-box">
+          <div id="g4-st2-step" style="font-size:0.82rem; color:#1e40af; margin-bottom:4px;">سؤال ۱ از ۲</div>
+          <div class="question-title" id="g4-st2-qtitle"></div>
+          <div id="g4-st2-opts"></div>
+          <div id="g4-st2-fb" class="feedback-msg hidden"></div>
+          <button type="button" class="btn btn-primary hidden" id="g4-st2-next-sub">سؤال بعدی محیط ⬅️</button>
+          <button type="button" class="btn btn-success hidden" id="g4-next-2">ایستگاه بعدی ⬅️</button>
+        </div>
+      </div>
+
+      <!-- ایستگاه ۳: ذهنی حساب کن -->
+      <div id="g4-st3" class="g4-station hidden">
+        <h3 class="card-title">۳. 🧠 ذهنی حساب کن (از کتاب ص ۱۱)</h3>
+        <div class="question-box">
+          <div id="g4-st3-step" style="font-size:0.82rem; color:#1e40af; margin-bottom:4px;">سؤال ۱ از ۴</div>
+          <div class="question-title" id="g4-st3-qtitle" style="font-size:1.15rem; direction:rtl;"></div>
+          <div id="g4-st3-opts"></div>
+          <div id="g4-st3-fb" class="feedback-msg hidden"></div>
+          <button type="button" class="btn btn-primary hidden" id="g4-st3-next-sub">سؤال بعدی ⬅️</button>
+          <button type="button" class="btn btn-success hidden" id="g4-next-3">ایستگاه بعدی ⬅️</button>
+        </div>
+      </div>
+
+      <!-- ایستگاه ۴: الگوی حلقه و گیره -->
+      <div id="g4-st4" class="g4-station hidden">
+        <h3 class="card-title">۴. 🔗 الگوی حلقه و گیره (تمرین ۳ ص ۱۱)</h3>
+        <div class="sim-stage" style="background:#fefce8; border-color:#fde047;">
+          <p style="margin:0 0 8px; font-weight:bold; color:#854d0e;">
+            «برای اتصال ۳ حلقه در یک ردیف، ۲ گیره لازم است؛ هر حلقه‌ی جدید فقط ۱ گیره‌ی اضافه می‌خواهد.»
+          </p>
+          <svg viewBox="0 0 240 70" width="220" height="65" style="margin:0 auto; display:block;">
+            <!-- ۳ حلقه -->
+            <circle cx="50" cy="35" r="22" fill="none" stroke="#2563eb" stroke-width="5"/>
+            <circle cx="120" cy="35" r="22" fill="none" stroke="#2563eb" stroke-width="5"/>
+            <circle cx="190" cy="35" r="22" fill="none" stroke="#2563eb" stroke-width="5"/>
+            <!-- ۲ گیره اتصال -->
+            <rect x="74" y="29" width="22" height="12" rx="4" fill="#ef4444" stroke="#991b1b" stroke-width="1.5"/>
+            <rect x="144" y="29" width="22" height="12" rx="4" fill="#ef4444" stroke="#991b1b" stroke-width="1.5"/>
+          </svg>
+        </div>
+
+        <div id="g4-q4-box" class="question-box">
+          <div class="question-title">سؤال: «برای اتصال ۱۲ حلقه در یک ردیف به چند گیره نیاز داریم؟»</div>
+          <button type="button" class="option-btn g4-q4-opt" data-correct="false">۱۲</button>
+          <button type="button" class="option-btn g4-q4-opt" data-correct="true">۱۱</button>
+          <button type="button" class="option-btn g4-q4-opt" data-correct="false">۱۰</button>
+          <div id="g4-q4-fb" class="feedback-msg hidden"></div>
+          <button type="button" class="btn btn-success hidden" id="g4-finish-btn">مشاهده نتیجه و دریافت گزارش 🎉</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- صفحه پایان بازی ۴ -->
+    <div id="g4-end-view" class="card hidden">
+      <h2 class="card-title">آفرین ریاضی‌دان کوچولو! 🎉</h2>
+      <p id="g4-end-stars-line" style="font-size:1.15rem; font-weight:bold; color:#d97706;"></p>
+      <pre class="report-pre" id="g4-end-report"></pre>
+      <button type="button" class="btn btn-primary" id="g4-end-copy-btn">📋 کپی گزارش</button>
+      <div id="g4-end-msg" class="inline-msg hidden"></div>
+    </div>
+  </section>
+</div>
+
+<script>
+// ==================== توابع کمکی مشترک و مدیریت منو ====================
+function toFaNum(val) {
+  return String(val).replace(/\d/g, function(d) {
+    return '۰۱۲۳۴۵۶۷۸۹'[d];
+  });
+}
+
+function getPersianDateTime() {
+  try {
+    return new Date().toLocaleString('fa-IR', { dateStyle: 'full', timeStyle: 'short' });
+  } catch (e) {
+    return toFaNum(new Date().toLocaleDateString('fa-IR'));
+  }
+}
+
+function copyTextHelper(text, msgEl) {
+  msgEl.classList.remove('hidden');
+  if (navigator.clipboard && navigator.clipboard.writeText) {
+    navigator.clipboard.writeText(text).then(function() {
+      msgEl.style.background = '#dcfce7';
+      msgEl.style.color = '#166534';
+      msgEl.textContent = '✅ گزارش با موفقیت کپی شد! حالا در پی‌وی آموزگار بفرست.';
+    }).catch(function() {
+      fallbackCopy(text, msgEl);
+    });
+  } else {
+    fallbackCopy(text, msgEl);
+  }
+}
+
+function fallbackCopy(text, msgEl) {
+  try {
+    var ta = document.createElement('textarea');
+    ta.value = text;
+    ta.style.position = 'fixed';
+    ta.style.opacity = '0';
+    document.body.appendChild(ta);
+    ta.select();
+    var ok = document.execCommand('copy');
+    document.body.removeChild(ta);
+    if (ok) {
+      msgEl.style.background = '#dcfce7';
+      msgEl.style.color = '#166534';
+      msgEl.textContent = '✅ گزارش با موفقیت کپی شد! حالا در پی‌وی آموزگار بفرست.';
+      return;
+    }
+  } catch (e) {}
+  msgEl.style.background = '#fef3c7';
+  msgEl.style.color = '#92400e';
+  msgEl.textContent = '⚠️ کپی خودکار انجام نشد؛ لطفاً متن گزارش بالا را نگه دارید و دستی کپی کنید.';
+}
+
+function refreshMenuBadges() {
+  var map = [
+    { key: 'done_oloom-dars2-v2', badgeId: 'menu-badge-g1' },
+    { key: 'done_oloom-dars1', badgeId: 'menu-badge-g2' },
+    { key: 'done_quran-j1', badgeId: 'menu-badge-g3' },
+    { key: 'done_riazi-fasl1-p11', badgeId: 'menu-badge-g4' }
+  ];
+  map.forEach(function(item) {
+    var el = document.getElementById(item.badgeId);
+    if (!el) return;
+    var saved = null;
+    try { saved = localStorage.getItem(item.key); } catch (e) {}
+    if (saved) {
+      el.textContent = '✅ انجام شد (قفل)';
+      el.className = 'menu-status-badge badge-done';
+    } else {
+      el.textContent = 'آماده شروع';
+      el.className = 'menu-status-badge badge-open';
+    }
+  });
+}
+
+function showMainMenu() {
+  document.getElementById('main-menu').classList.remove('hidden');
+  ['g1-section', 'g2-section', 'g3-section', 'g4-section'].forEach(function(id) {
+    document.getElementById(id).classList.add('hidden');
+  });
+  refreshMenuBadges();
+  window.scrollTo(0, 0);
+}
+
+refreshMenuBadges();
+</script>
+
+<script>
+// ==================== اسکریپت بازی ۱: مأموریت انرژی (oloom-dars2-v2) ====================
+(function() {
+  var GAME_ID = 'oloom-dars2-v2';
+  var STORAGE_KEY = 'done_' + GAME_ID;
+
+  var sectionEl = document.getElementById('g1-section');
+  var lockView = document.getElementById('g1-lock-view');
+  var startView = document.getElementById('g1-start-view');
+  var darsView = document.getElementById('g1-dars-view');
+  var playView = document.getElementById('g1-play-view');
+  var endView = document.getElementById('g1-end-view');
+
+  var playerName = '';
+  var stars = 0;
+  var qTried = { 1: false, 2: false, 3: false, 4: false };
+  var tapCount = 0;
+
+  function openGame1() {
+    document.getElementById('main-menu').classList.add('hidden');
+    sectionEl.classList.remove('hidden');
+    window.scrollTo(0, 0);
+
+    var savedStr = null;
+    try { savedStr = localStorage.getItem(STORAGE_KEY); } catch (e) {}
+    if (savedStr) {
+      try {
+        var data = JSON.parse(savedStr);
+        showLockScreen(data);
+        return;
+      } catch (e) {}
+    }
+    lockView.classList.add('hidden');
+    darsView.classList.add('hidden');
+    playView.classList.add('hidden');
+    endView.classList.add('hidden');
+    startView.classList.remove('hidden');
+  }
+
+  function showLockScreen(data) {
+    startView.classList.add('hidden');
+    darsView.classList.add('hidden');
+    playView.classList.add('hidden');
+    endView.classList.add('hidden');
+    lockView.classList.remove('hidden');
+    document.getElementById('g1-top-stars').textContent = '⭐ ' + toFaNum(data.stars) + ' از ۴';
+    document.getElementById('g1-lock-summary').textContent =
+      'دانش‌آموز: ' + data.name + ' | امتیاز: ' + toFaNum(data.stars) + ' ستاره از ۴ | تاریخ: ' + data.date;
+    document.getElementById('g1-lock-report').textContent = data.report;
+  }
+
+  document.getElementById('menu-btn-g1').addEventListener('click', openGame1);
+  document.getElementById('g1-back-btn').addEventListener('click', showMainMenu);
+
+  // ریست مخفی ۷ ضربه روی تیتر صفحه قفل
+  document.getElementById('g1-lock-title').addEventListener('click', function() {
+    tapCount++;
+    if (tapCount >= 7) {
+      tapCount = 0;
+      document.getElementById('g1-teacher-reset-box').classList.remove('hidden');
+    }
+  });
+  document.getElementById('g1-confirm-reset-btn').addEventListener('click', function() {
+    try { localStorage.removeItem(STORAGE_KEY); } catch (e) {}
+    document.getElementById('g1-teacher-reset-box').classList.add('hidden');
+    resetGameState();
+    openGame1();
+    refreshMenuBadges();
+  });
+  document.getElementById('g1-cancel-reset-btn').addEventListener('click', function() {
+    document.getElementById('g1-teacher-reset-box').classList.add('hidden');
+  });
+
+  document.getElementById('g1-lock-copy-btn').addEventListener('click', function() {
+    var txt = document.getElementById('g1-lock-report').textContent;
+    copyTextHelper(txt, document.getElementById('g1-lock-msg'));
+  });
+
+  document.getElementById('g1-start-btn').addEventListener('click', function() {
+    var val = document.getElementById('g1-name-input').value.trim();
+    var err = document.getElementById('g1-name-err');
+    if (!val) {
+      err.classList.remove('hidden');
+      return;
+    }
+    err.classList.add('hidden');
+    playerName = val;
+    startView.classList.add('hidden');
+    darsView.classList.remove('hidden');
+  });
+
+  document.getElementById('g1-enter-lab-btn').addEventListener('click', function() {
+    darsView.classList.add('hidden');
+    playView.classList.remove('hidden');
+    document.getElementById('g1-player-label').textContent = '👦 ' + playerName;
+    showStation(1);
+  });
+
+  function updateStarsUI() {
+    document.getElementById('g1-top-stars').textContent = '⭐ ' + toFaNum(stars) + ' از ۴';
+  }
+
+  function showStation(num) {
+    document.getElementById('g1-station-badge').textContent = 'ایستگاه ' + toFaNum(num) + ' از ۴';
+    ['g1-st1', 'g1-st2', 'g1-st3', 'g1-st4'].forEach(function(id, idx) {
+      var el = document.getElementById(id);
+      if (idx + 1 === num) el.classList.remove('hidden');
+      else el.classList.add('hidden');
+    });
+    window.scrollTo(0, 0);
+  }
+
+  // ایستگاه ۱: فرفره (نگه داشتن دکمه فوت کن)
+  var pinwheelPct = 0;
+  var pinwheelAngle = 0;
+  var blowTimer = null;
+  var blowBtn = document.getElementById('g1-blow-btn');
+
+  function startBlowing(e) {
+    if (e && e.cancelable) e.preventDefault();
+    if (blowTimer) return;
+    document.getElementById('g1-wind-lines').setAttribute('opacity', '0.9');
+    blowTimer = setInterval(function() {
+      pinwheelPct = Math.min(100, pinwheelPct + 5);
+      pinwheelAngle = (pinwheelAngle + 28) % 360;
+      document.getElementById('g1-pinwheel-svg').style.transform = 'rotate(' + pinwheelAngle + 'deg)';
+      document.getElementById('g1-st1-bar').style.width = pinwheelPct + '%';
+      document.getElementById('g1-st1-pct').textContent = 'سرعت چرخش: ' + toFaNum(pinwheelPct) + '٪';
+      if (pinwheelPct >= 100) {
+        stopBlowing();
+        document.getElementById('g1-q1-box').classList.remove('hidden');
+      }
+    }, 60);
+  }
+  function stopBlowing() {
+    document.getElementById('g1-wind-lines').setAttribute('opacity', '0.2');
+    if (blowTimer) {
+      clearInterval(blowTimer);
+      blowTimer = null;
+    }
+  }
+  blowBtn.addEventListener('mousedown', startBlowing);
+  blowBtn.addEventListener('touchstart', startBlowing);
+  window.addEventListener('mouseup', stopBlowing);
+  window.addEventListener('touchend', stopBlowing);
+  blowBtn.addEventListener('click', function() {
+    pinwheelPct = Math.min(100, pinwheelPct + 25);
+    pinwheelAngle = (pinwheelAngle + 90) % 360;
+    document.getElementById('g1-pinwheel-svg').style.transform = 'rotate(' + pinwheelAngle + 'deg)';
+    document.getElementById('g1-st1-bar').style.width = pinwheelPct + '%';
+    document.getElementById('g1-st1-pct').textContent = 'سرعت چرخش: ' + toFaNum(pinwheelPct) + '٪';
+    if (pinwheelPct >= 100) {
+      document.getElementById('g1-q1-box').classList.remove('hidden');
+    }
+  });
+
+  // ایستگاه ۲: چرخ آب
+  var waterLevel = 2;
+  var wheelAngle = 0;
+  var wheelInterval = null;
+  document.querySelectorAll('.g1-water-lvl').forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      waterLevel = parseInt(btn.getAttribute('data-lvl'), 10);
+      var names = { 1: 'آب کم', 2: 'آب متوسط', 3: 'آب زیاد (تندتر!)' };
+      document.getElementById('g1-st2-status').textContent = 'شدت انتخاب‌شده: ' + names[waterLevel];
+    });
+  });
+
+  document.getElementById('g1-open-water-btn').addEventListener('click', function() {
+    var stream = document.getElementById('g1-water-stream');
+    stream.setAttribute('width', String(waterLevel * 4));
+    if (wheelInterval) clearInterval(wheelInterval);
+    var ticks = 0;
+    wheelInterval = setInterval(function() {
+      ticks++;
+      wheelAngle = (wheelAngle + waterLevel * 18) % 360;
+      document.getElementById('g1-wheel-svg').style.transform = 'rotate(' + wheelAngle + 'deg)';
+      var liftY = Math.min(34, ticks * waterLevel * 1.4);
+      document.getElementById('g1-cup-lift').setAttribute('transform', 'translate(0,-' + liftY + ')');
+      document.getElementById('g1-rope-line').setAttribute('y2', String(122 - liftY));
+      if (ticks >= 18) {
+        clearInterval(wheelInterval);
+        document.getElementById('g1-q2-box').classList.remove('hidden');
+      }
+    }, 80);
+  });
+
+  // ایستگاه ۳: مارپیچ روی بخاری
+  var spiralTimer = null;
+  var spiralDeg = 0;
+  document.querySelectorAll('.g1-flame-btn').forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      var heat = parseInt(btn.getAttribute('data-heat'), 10);
+      var flameEl = document.getElementById('g1-flame-icons');
+      var svgFlames = document.getElementById('g1-svg-flames');
+      var heatWaves = document.getElementById('g1-heat-waves');
+      if (spiralTimer) clearInterval(spiralTimer);
+      if (heat === 0) {
+        flameEl.textContent = 'وضعیت بخاری: خاموش';
+        svgFlames.setAttribute('opacity', '0');
+        heatWaves.setAttribute('opacity', '0');
+      } else {
+        flameEl.textContent = heat === 1 ? 'شعله کم: هوای گرم آرام بالا می‌رود' : 'شعله زیاد: هوای داغ تند بالا می‌رود!';
+        svgFlames.setAttribute('opacity', heat === 1 ? '0.65' : '1');
+        heatWaves.setAttribute('opacity', heat === 1 ? '0.5' : '1');
+        var steps = 0;
+        spiralTimer = setInterval(function() {
+          steps++;
+          spiralDeg = (spiralDeg + heat * 16) % 360;
+          document.getElementById('g1-spiral-svg').style.transform = 'rotate(' + spiralDeg + 'deg)';
+          if (steps >= 15) {
+            document.getElementById('g1-q3-box').classList.remove('hidden');
+          }
+        }, 70);
+      }
+    });
+  });
+
+  // ایستگاه ۴: طبل صدا
+  var riceGroup = document.getElementById('g1-rice-group');
+  var soundWaves = document.getElementById('g1-sound-waves');
+  document.getElementById('g1-hit-soft').addEventListener('click', function() {
+    soundWaves.setAttribute('opacity', '0.5');
+    riceGroup.style.transform = 'translateY(-10px)';
+    setTimeout(function() {
+      riceGroup.style.transform = 'translateY(0)';
+      soundWaves.setAttribute('opacity', '0');
+    }, 220);
+  });
+  document.getElementById('g1-hit-hard').addEventListener('click', function() {
+    soundWaves.setAttribute('opacity', '1');
+    riceGroup.style.transform = 'translateY(-36px)';
+    setTimeout(function() {
+      riceGroup.style.transform = 'translateY(0)';
+      soundWaves.setAttribute('opacity', '0');
+      document.getElementById('g1-q4-box').classList.remove('hidden');
+    }, 320);
+  });
+
+  // بررسی گزینه‌های ۴ ایستگاه بازی ۱
+  var explanations = {
+    1: 'باد که می‌وزد انرژی حرکتی دارد و فرفره را می‌چرخاند.',
+    2: 'آب جاری انرژی حرکتی دارد؛ چرخ با آن چرخید و لیوان را بالا کشید.',
+    3: 'هوای گرم بالا می‌رود و مارپیچ را می‌چرخاند؛ یعنی انرژی گرمایی به انرژی حرکتی تبدیل شد.',
+    4: 'صدا انرژی دارد؛ ضربه‌ی محکم‌تر، صدای بلندتر و پرش بیشتر دانه‌ها را ساخت.'
+  };
+
+  [1, 2, 3, 4].forEach(function(qNum) {
+    var box = document.getElementById('g1-q' + qNum + '-box');
+    var fb = document.getElementById('g1-q' + qNum + '-fb');
+    var nextBtn = qNum < 4 ? document.getElementById('g1-next-' + qNum) : document.getElementById('g1-finish-btn');
+    var opts = box.querySelectorAll('.option-btn');
+
+    opts.forEach(function(opt) {
+      opt.addEventListener('click', function() {
+        var isRight = opt.getAttribute('data-correct') === 'true';
+        fb.classList.remove('hidden');
+        if (isRight) {
+          opt.classList.add('correct');
+          opts.forEach(function(b) { b.disabled = true; });
+          if (!qTried[qNum]) {
+            stars++;
+            updateStarsUI();
+          }
+          fb.className = 'feedback-msg feedback-ok';
+          fb.textContent = '⭐ آفرین! ' + explanations[qNum];
+          nextBtn.classList.remove('hidden');
+        } else {
+          qTried[qNum] = true;
+          opt.classList.add('wrong');
+          opt.disabled = true;
+          fb.className = 'feedback-msg feedback-err';
+          fb.textContent = '❌ دوباره فکر کن!';
+        }
+      });
+    });
+  });
+
+  document.getElementById('g1-next-1').addEventListener('click', function() { showStation(2); });
+  document.getElementById('g1-next-2').addEventListener('click', function() { showStation(3); });
+  document.getElementById('g1-next-3').addEventListener('click', function() { showStation(4); });
+
+  document.getElementById('g1-finish-btn').addEventListener('click', function() {
+    var nowFa = getPersianDateTime();
+    var starsFa = toFaNum(stars);
+    var reportText =
+      '⚡ گزارش «مأموریت انرژی» — آزمایشگاه واقعی\n' +
+      '👦 نام: ' + playerName + '\n' +
+      '⭐ ستاره‌ها: ' + starsFa + ' از ۴\n' +
+      '🧪 آزمایش‌های انجام‌شده: فرفره، چرخ آب، مارپیچ گرمایی، طبل صدا\n' +
+      '🕐 انجام شده در: ' + nowFa;
+
+    var record = {
+      name: playerName,
+      stars: stars,
+      date: nowFa,
+      report: reportText
+    };
+    try {
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(record));
+    } catch (e) {}
+    refreshMenuBadges();
+
+    playView.classList.add('hidden');
+    endView.classList.remove('hidden');
+    document.getElementById('g1-end-stars-line').textContent = 'امتیاز شما: ⭐ ' + starsFa + ' از ۴ ستاره';
+    document.getElementById('g1-end-report').textContent = reportText;
+  });
+
+  document.getElementById('g1-end-copy-btn').addEventListener('click', function() {
+    var txt = document.getElementById('g1-end-report').textContent;
+    copyTextHelper(txt, document.getElementById('g1-end-msg'));
+  });
+
+  function resetGameState() {
+    stars = 0;
+    qTried = { 1: false, 2: false, 3: false, 4: false };
+    pinwheelPct = 0;
+    updateStarsUI();
+  }
+})();
+</script>
+
+<script>
+// ==================== اسکریپت بازی ۲: مأموریت مخلوط‌ها (oloom-dars1) ====================
+(function() {
+  var GAME_ID = 'oloom-dars1';
+  var STORAGE_KEY = 'done_' + GAME_ID;
+
+  var sectionEl = document.getElementById('g2-section');
+  var lockView = document.getElementById('g2-lock-view');
+  var startView = document.getElementById('g2-start-view');
+  var darsView = document.getElementById('g2-dars-view');
+  var playView = document.getElementById('g2-play-view');
+  var endView = document.getElementById('g2-end-view');
+
+  var playerName = '';
+  var stars = 0;
+  var qTried = { 1: false, 2: false, 3: false };
+  var tapCount = 0;
+
+  function openGame2() {
+    document.getElementById('main-menu').classList.add('hidden');
+    sectionEl.classList.remove('hidden');
+    window.scrollTo(0, 0);
+
+    var savedStr = null;
+    try { savedStr = localStorage.getItem(STORAGE_KEY); } catch (e) {}
+    if (savedStr) {
+      try {
+        var data = JSON.parse(savedStr);
+        showLockScreen(data);
+        return;
+      } catch (e) {}
+    }
+    lockView.classList.add('hidden');
+    darsView.classList.add('hidden');
+    playView.classList.add('hidden');
+    endView.classList.add('hidden');
+    startView.classList.remove('hidden');
+  }
+
+  function showLockScreen(data) {
+    startView.classList.add('hidden');
+    darsView.classList.add('hidden');
+    playView.classList.add('hidden');
+    endView.classList.add('hidden');
+    lockView.classList.remove('hidden');
+    document.getElementById('g2-top-stars').textContent = '⭐ ' + toFaNum(data.stars) + ' از ۴';
+    document.getElementById('g2-lock-summary').textContent =
+      'دانش‌آموز: ' + data.name + ' | امتیاز: ' + toFaNum(data.stars) + ' ستاره از ۴ | تاریخ: ' + data.date;
+    document.getElementById('g2-lock-report').textContent = data.report;
+  }
+
+  document.getElementById('menu-btn-g2').addEventListener('click', openGame2);
+  document.getElementById('g2-back-btn').addEventListener('click', showMainMenu);
+
+  // ریست مخفی ۷ ضربه
+  document.getElementById('g2-lock-title').addEventListener('click', function() {
+    tapCount++;
+    if (tapCount >= 7) {
+      tapCount = 0;
+      document.getElementById('g2-teacher-reset-box').classList.remove('hidden');
+    }
+  });
+  document.getElementById('g2-confirm-reset-btn').addEventListener('click', function() {
+    try { localStorage.removeItem(STORAGE_KEY); } catch (e) {}
+    document.getElementById('g2-teacher-reset-box').classList.add('hidden');
+    stars = 0;
+    document.getElementById('g2-top-stars').textContent = '⭐ ۰ از ۴';
+    openGame2();
+    refreshMenuBadges();
+  });
+  document.getElementById('g2-cancel-reset-btn').addEventListener('click', function() {
+    document.getElementById('g2-teacher-reset-box').classList.add('hidden');
+  });
+
+  document.getElementById('g2-lock-copy-btn').addEventListener('click', function() {
+    var txt = document.getElementById('g2-lock-report').textContent;
+    copyTextHelper(txt, document.getElementById('g2-lock-msg'));
+  });
+
+  document.getElementById('g2-start-btn').addEventListener('click', function() {
+    var val = document.getElementById('g2-name-input').value.trim();
+    var err = document.getElementById('g2-name-err');
+    if (!val) {
+      err.classList.remove('hidden');
+      return;
+    }
+    err.classList.add('hidden');
+    playerName = val;
+    startView.classList.add('hidden');
+    darsView.classList.remove('hidden');
+  });
+
+  document.getElementById('g2-enter-lab-btn').addEventListener('click', function() {
+    darsView.classList.add('hidden');
+    playView.classList.remove('hidden');
+    document.getElementById('g2-player-label').textContent = '👦 ' + playerName;
+    showStation(1);
+  });
+
+  function updateStarsUI() {
+    document.getElementById('g2-top-stars').textContent = '⭐ ' + toFaNum(stars) + ' از ۴';
+  }
+
+  function showStation(num) {
+    document.getElementById('g2-station-badge').textContent = 'ایستگاه ' + toFaNum(num) + ' از ۴';
+    ['g2-st1', 'g2-st2', 'g2-st3', 'g2-st4'].forEach(function(id, idx) {
+      var el = document.getElementById(id);
+      if (idx + 1 === num) el.classList.remove('hidden');
+      else el.classList.add('hidden');
+    });
+    window.scrollTo(0, 0);
+  }
+
+  // ایستگاه ۱: مسابقه حل شدن نبات
+  var nabatDone = { 1: false, 2: false, 3: false };
+  function runNabatCup(idx, targetSec) {
+    var btn = document.getElementById('g2-nabat-btn' + idx);
+    var timerEl = document.getElementById('g2-nabat-t' + idx);
+    var partEl = document.getElementById('g2-nabat-p' + idx);
+    btn.disabled = true;
+    var cur = 0;
+    var iv = setInterval(function() {
+      cur++;
+      timerEl.textContent = '⏱️ ' + toFaNum(cur) + ' ثانیه';
+      partEl.style.opacity = String(Math.max(0, 1 - cur / targetSec));
+      if (cur >= targetSec) {
+        clearInterval(iv);
+        timerEl.textContent = '✅ ' + toFaNum(targetSec) + ' ثانیه';
+        nabatDone[idx] = true;
+        if (nabatDone[1] && nabatDone[2] && nabatDone[3]) {
+          document.getElementById('g2-q1-box').classList.remove('hidden');
+        }
+      }
+    }, 180);
+  }
+  document.getElementById('g2-nabat-btn1').addEventListener('click', function() { runNabatCup(1, 12); });
+  document.getElementById('g2-nabat-btn2').addEventListener('click', function() { runNabatCup(2, 7); });
+  document.getElementById('g2-nabat-btn3').addEventListener('click', function() { runNabatCup(3, 3); });
+
+  // ایستگاه ۲: شکر در آب سرد و داغ
+  document.getElementById('g2-stir-sugar-btn').addEventListener('click', function() {
+    var btn = document.getElementById('g2-stir-sugar-btn');
+    btn.disabled = true;
+    var targets = [12, 7, 3]; // سرد ۱۲، نیم‌گرم ۷، داغ ۳
+    var cur = [0, 0, 0];
+    var iv = setInterval(function() {
+      var allDone = true;
+      for (var i = 0; i < 3; i++) {
+        if (cur[i] < targets[i]) {
+          cur[i]++;
+          allDone = false;
+          document.getElementById('g2-temp-t' + (i + 1)).textContent = '⏱️ ' + toFaNum(cur[i]) + ' ثانیه';
+          document.getElementById('g2-temp-p' + (i + 1)).style.opacity = String(Math.max(0, 1 - cur[i] / targets[i]));
+          document.getElementById('g2-bar-' + (i + 1)).style.height = (cur[i] * 6) + 'px';
+        } else {
+          document.getElementById('g2-temp-t' + (i + 1)).textContent = '✅ ' + toFaNum(targets[i]) + ' ثانیه';
+        }
+      }
+      if (allDone) {
+        clearInterval(iv);
+        document.getElementById('g2-q2-box').classList.remove('hidden');
+      }
+    }, 180);
+  });
+
+  // ایستگاه ۳: صافی جادویی
+  document.getElementById('g2-pour-filter-btn').addEventListener('click', function() {
+    document.getElementById('g2-pour-filter-btn').disabled = true;
+    document.getElementById('g2-filter-top').textContent = 'لیوان (آ): داخل قیف و کاغذ صافی مخروطی ریخته شد';
+    document.getElementById('g2-filter-sand').classList.remove('hidden');
+    document.getElementById('g2-filter-drops').classList.remove('hidden');
+    document.getElementById('g2-filtrate-liquid').classList.remove('hidden');
+    document.getElementById('g2-filter-bottom').textContent = '💧 ظرف پایین صافی: آب‌نمک شفاف از صافی رد شد!';
+    document.getElementById('g2-q3-box').classList.remove('hidden');
+  });
+
+  // سؤالات ایستگاه ۱ تا ۳ بازی ۲
+  var exp2 = {
+    1: 'پودر نبات زودتر حل شد؛ چون تکه‌هایش کوچک‌تر است و سطح تماس بیشتری با آب دارد.',
+    2: 'در آب داغ، ذره‌های آب تندتر حرکت می‌کنند و شکر را زودتر حل می‌کنند.',
+    3: 'ماسه روی صافی ماند و جدا شد؛ نمک چون در آب حل شده بود از صافی رد شد. اگر آب‌نمک را بخار کنیم (تبخیر)، نمک ته ظرف می‌ماند!'
+  };
+
+  [1, 2, 3].forEach(function(qNum) {
+    var box = document.getElementById('g2-q' + qNum + '-box');
+    var fb = document.getElementById('g2-q' + qNum + '-fb');
+    var nextBtn = document.getElementById('g2-next-' + qNum);
+    var opts = box.querySelectorAll('.option-btn');
+
+    opts.forEach(function(opt) {
+      opt.addEventListener('click', function() {
+        var isRight = opt.getAttribute('data-correct') === 'true';
+        fb.classList.remove('hidden');
+        if (isRight) {
+          opt.classList.add('correct');
+          opts.forEach(function(b) { b.disabled = true; });
+          if (!qTried[qNum]) {
+            stars++;
+            updateStarsUI();
+          }
+          fb.className = 'feedback-msg feedback-ok';
+          fb.textContent = '⭐ آفرین! ' + exp2[qNum];
+          nextBtn.classList.remove('hidden');
+        } else {
+          qTried[qNum] = true;
+          opt.classList.add('wrong');
+          opt.disabled = true;
+          fb.className = 'feedback-msg feedback-err';
+          fb.textContent = '❌ دوباره فکر کن!';
+        }
+      });
+    });
+  });
+
+  document.getElementById('g2-next-1').addEventListener('click', function() { showStation(2); });
+  document.getElementById('g2-next-2').addEventListener('click', function() { showStation(3); });
+  document.getElementById('g2-next-3').addEventListener('click', function() {
+    showStation(4);
+    startDetective();
+  });
+
+  // ایستگاه ۴: کارآگاه مخلوط‌ها
+  var detItems = [
+    { name: 'آب و نمک 🧂', uniform: true },
+    { name: 'شربت 🥤', uniform: true },
+    { name: 'دوغ 🥛', uniform: false },
+    { name: 'آب و خاک 🪨', uniform: false }
+  ];
+  var detIndex = 0;
+  var detCorrect = 0;
+  var detStarGiven = false;
+
+  function startDetective() {
+    detIndex = 0;
+    detCorrect = 0;
+    document.getElementById('g2-det-fb').classList.add('hidden');
+    document.getElementById('g2-det-retry-btn').classList.add('hidden');
+    document.getElementById('g2-det-card').classList.remove('hidden');
+    renderDetItem();
+  }
+
+  function renderDetItem() {
+    var item = detItems[detIndex];
+    document.getElementById('g2-det-step').textContent = 'مورد ' + toFaNum(detIndex + 1) + ' از ۴';
+    document.getElementById('g2-det-title').textContent = item.name;
+  }
+
+  function handleDetChoice(chosenUniform) {
+    var item = detItems[detIndex];
+    var fb = document.getElementById('g2-det-fb');
+    fb.classList.remove('hidden');
+    if (chosenUniform === item.uniform) {
+      detCorrect++;
+      fb.className = 'feedback-msg feedback-ok';
+      fb.textContent = '✅ آفرین! تشخیص درست بود.';
+    } else {
+      fb.className = 'feedback-msg feedback-err';
+      fb.textContent = '❌ دقت کن! این مورد ' + (item.uniform ? 'یکنواخت و شفاف' : 'غیریک‌نواخت') + ' است.';
+    }
+    detIndex++;
+    if (detIndex < detItems.length) {
+      setTimeout(renderDetItem, 550);
+    } else {
+      document.getElementById('g2-det-card').classList.add('hidden');
+      if (detCorrect >= 3) {
+        if (!detStarGiven) {
+          stars++;
+          detStarGiven = true;
+          updateStarsUI();
+        }
+        fb.className = 'feedback-msg feedback-ok';
+        fb.textContent = '⭐ عالی کارآگاه! ' + toFaNum(detCorrect) + ' از ۴ مورد را درست تشخیص دادی و ستاره گرفتی!';
+        document.getElementById('g2-finish-btn').classList.remove('hidden');
+      } else {
+        fb.className = 'feedback-msg feedback-err';
+        fb.textContent = 'شما ' + toFaNum(detCorrect) + ' از ۴ مورد را درست زدی. برای گرفتن ستاره باید حداقل ۳ مورد درست باشد؛ دوباره تلاش کن!';
+        document.getElementById('g2-det-retry-btn').classList.remove('hidden');
+      }
+    }
+  }
+
+  document.getElementById('g2-det-uni-btn').addEventListener('click', function() { handleDetChoice(true); });
+  document.getElementById('g2-det-non-btn').addEventListener('click', function() { handleDetChoice(false); });
+  document.getElementById('g2-det-retry-btn').addEventListener('click', startDetective);
+
+  document.getElementById('g2-finish-btn').addEventListener('click', function() {
+    var nowFa = getPersianDateTime();
+    var starsFa = toFaNum(stars);
+    var reportText =
+      '🧪 گزارش «مأموریت مخلوط‌ها» — آزمایشگاه واقعی\n' +
+      '👦 نام: ' + playerName + '\n' +
+      '⭐ ستاره‌ها: ' + starsFa + ' از ۴\n' +
+      '🧪 آزمایش‌های انجام‌شده: نبات، شکر و دما، صافی، کارآگاه مخلوط‌ها\n' +
+      '🕐 انجام شده در: ' + nowFa;
+
+    var record = {
+      name: playerName,
+      stars: stars,
+      date: nowFa,
+      report: reportText
+    };
+    try {
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(record));
+    } catch (e) {}
+    refreshMenuBadges();
+
+    playView.classList.add('hidden');
+    endView.classList.remove('hidden');
+    document.getElementById('g2-end-stars-line').textContent = 'امتیاز شما: ⭐ ' + starsFa + ' از ۴ ستاره';
+    document.getElementById('g2-end-report').textContent = reportText;
+  });
+
+  document.getElementById('g2-end-copy-btn').addEventListener('click', function() {
+    var txt = document.getElementById('g2-end-report').textContent;
+    copyTextHelper(txt, document.getElementById('g2-end-msg'));
+  });
+})();
+</script>
+
+<script>
+// ==================== اسکریپت بازی ۳: قرآن جلسه ۱ (quran-j1) ====================
+(function() {
+  var GAME_ID = 'quran-j1';
+  var STORAGE_KEY = 'done_' + GAME_ID;
+
+  var sectionEl = document.getElementById('g3-section');
+  var lockView = document.getElementById('g3-lock-view');
+  var startView = document.getElementById('g3-start-view');
+  var darsView = document.getElementById('g3-dars-view');
+  var practiceView = document.getElementById('g3-practice-view');
+  var quizView = document.getElementById('g3-quiz-view');
+  var endView = document.getElementById('g3-end-view');
+
+  var playerName = '';
+  var qHadWrong = { 1: false, 2: false };
+  var qSolved = { 1: false, 2: false };
+  var tapCount = 0;
+
+  function openGame3() {
+    document.getElementById('main-menu').classList.add('hidden');
+    sectionEl.classList.remove('hidden');
+    window.scrollTo(0, 0);
+
+    var savedStr = null;
+    try { savedStr = localStorage.getItem(STORAGE_KEY); } catch (e) {}
+    if (savedStr) {
+      try {
+        var data = JSON.parse(savedStr);
+        showLockScreen(data);
+        return;
+      } catch (e) {}
+    }
+    lockView.classList.add('hidden');
+    darsView.classList.add('hidden');
+    practiceView.classList.add('hidden');
+    quizView.classList.add('hidden');
+    endView.classList.add('hidden');
+    startView.classList.remove('hidden');
+  }
+
+  function showLockScreen(data) {
+    startView.classList.add('hidden');
+    darsView.classList.add('hidden');
+    practiceView.classList.add('hidden');
+    quizView.classList.add('hidden');
+    endView.classList.add('hidden');
+    lockView.classList.remove('hidden');
+    document.getElementById('g3-top-stars').textContent = '⭐ ' + toFaNum(data.stars) + ' از ۳';
+    document.getElementById('g3-lock-summary').textContent =
+      'دانش‌آموز: ' + data.name + ' | ستاره: ' + toFaNum(data.stars) + ' از ۳ | تاریخ: ' + data.date;
+    document.getElementById('g3-lock-report').textContent = data.report;
+  }
+
+  document.getElementById('menu-btn-g3').addEventListener('click', openGame3);
+  document.getElementById('g3-back-btn').addEventListener('click', showMainMenu);
+
+  // ریست مخفی ۷ ضربه
+  document.getElementById('g3-lock-title').addEventListener('click', function() {
+    tapCount++;
+    if (tapCount >= 7) {
+      tapCount = 0;
+      document.getElementById('g3-teacher-reset-box').classList.remove('hidden');
+    }
+  });
+  document.getElementById('g3-confirm-reset-btn').addEventListener('click', function() {
+    try { localStorage.removeItem(STORAGE_KEY); } catch (e) {}
+    document.getElementById('g3-teacher-reset-box').classList.add('hidden');
+    openGame3();
+    refreshMenuBadges();
+  });
+  document.getElementById('g3-cancel-reset-btn').addEventListener('click', function() {
+    document.getElementById('g3-teacher-reset-box').classList.add('hidden');
+  });
+
+  document.getElementById('g3-lock-copy-btn').addEventListener('click', function() {
+    var txt = document.getElementById('g3-lock-report').textContent;
+    copyTextHelper(txt, document.getElementById('g3-lock-msg'));
+  });
+
+  document.getElementById('g3-start-btn').addEventListener('click', function() {
+    var val = document.getElementById('g3-name-input').value.trim();
+    var err = document.getElementById('g3-name-err');
+    if (!val) {
+      err.classList.remove('hidden');
+      return;
+    }
+    err.classList.add('hidden');
+    playerName = val;
+    startView.classList.add('hidden');
+    darsView.classList.remove('hidden');
+  });
+
+  document.getElementById('g3-to-practice-btn').addEventListener('click', function() {
+    darsView.classList.add('hidden');
+    practiceView.classList.remove('hidden');
+    window.scrollTo(0, 0);
+  });
+
+  document.getElementById('g3-to-quiz-btn').addEventListener('click', function() {
+    practiceView.classList.add('hidden');
+    quizView.classList.remove('hidden');
+    window.scrollTo(0, 0);
+  });
+
+  function setupQuranQuestion(qNum, selector, fbId) {
+    var opts = document.querySelectorAll(selector);
+    var fb = document.getElementById(fbId);
+    opts.forEach(function(opt) {
+      opt.addEventListener('click', function() {
+        var isRight = opt.getAttribute('data-correct') === 'true';
+        fb.classList.remove('hidden');
+        if (isRight) {
+          opt.classList.add('correct');
+          opts.forEach(function(b) { b.disabled = true; });
+          qSolved[qNum] = true;
+          fb.className = 'feedback-msg feedback-ok';
+          fb.textContent = '⭐ آفرین! پاسخ درست است.';
+          if (qSolved[1] && qSolved[2]) {
+            document.getElementById('g3-finish-btn').classList.remove('hidden');
+          }
+        } else {
+          qHadWrong[qNum] = true;
+          opt.classList.add('wrong');
+          opt.disabled = true;
+          fb.className = 'feedback-msg feedback-err';
+          fb.textContent = '❌ دوباره فکر کن!';
+        }
+      });
+    });
+  }
+
+  setupQuranQuestion(1, '.g3-q1-opt', 'g3-q1-fb');
+  setupQuranQuestion(2, '.g3-q2-opt', 'g3-q2-fb');
+
+  document.getElementById('g3-finish-btn').addEventListener('click', function() {
+    // محاسبه ستاره طبق قانون: ۲ درست در بار اول = ۳ ستاره، ۱ درست = ۲ ستاره، ۰ درست = ۱ ستاره
+    var correctFirstTry = (qHadWrong[1] ? 0 : 1) + (qHadWrong[2] ? 0 : 1);
+    var stars = correctFirstTry === 2 ? 3 : (correctFirstTry === 1 ? 2 : 1);
+    var starsFa = toFaNum(stars);
+    var nowFa = getPersianDateTime();
+
+    var reportText =
+      '📋 گزارش «قرآن — جلسه ۱»\n' +
+      '👤 نام: ' + playerName + '\n' +
+      '🕌 سوره ابراهیم، آیات ۳۸ تا ۴۱\n' +
+      '⭐ ستاره: ' + starsFa + ' از ۳\n' +
+      '🕐 انجام شده در: ' + nowFa;
+
+    var record = {
+      name: playerName,
+      stars: stars,
+      date: nowFa,
+      report: reportText
+    };
+    try {
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(record));
+    } catch (e) {}
+    refreshMenuBadges();
+
+    document.getElementById('g3-top-stars').textContent = '⭐ ' + starsFa + ' از ۳';
+    quizView.classList.add('hidden');
+    endView.classList.remove('hidden');
+    document.getElementById('g3-end-stars-line').textContent = 'ستاره‌های شما: ⭐ ' + starsFa + ' از ۳';
+    document.getElementById('g3-end-report').textContent = reportText;
+  });
+
+  document.getElementById('g3-end-copy-btn').addEventListener('click', function() {
+    var txt = document.getElementById('g3-end-report').textContent;
+    copyTextHelper(txt, document.getElementById('g3-end-msg'));
+  });
+})();
+</script>
+
+<script>
+// ==================== اسکریپت بازی ۴: ریاضی — الگو و ماشین (riazi-fasl1-p11) ====================
+(function() {
+  var GAME_ID = 'riazi-fasl1-p11';
+  var STORAGE_KEY = 'done_' + GAME_ID;
+
+  var sectionEl = document.getElementById('g4-section');
+  var lockView = document.getElementById('g4-lock-view');
+  var startView = document.getElementById('g4-start-view');
+  var videoView = document.getElementById('g4-video-view');
+  var playView = document.getElementById('g4-play-view');
+  var endView = document.getElementById('g4-end-view');
+
+  var playerName = '';
+  var stars = 0;
+  var tapCount = 0;
+
+  function openGame4() {
+    document.getElementById('main-menu').classList.add('hidden');
+    sectionEl.classList.remove('hidden');
+    window.scrollTo(0, 0);
+
+    var savedStr = null;
+    try { savedStr = localStorage.getItem(STORAGE_KEY); } catch (e) {}
+    if (savedStr) {
+      try {
+        var data = JSON.parse(savedStr);
+        showLockScreen(data);
+        return;
+      } catch (e) {}
+    }
+    lockView.classList.add('hidden');
+    videoView.classList.add('hidden');
+    playView.classList.add('hidden');
+    endView.classList.add('hidden');
+    startView.classList.remove('hidden');
+  }
+
+  function showLockScreen(data) {
+    startView.classList.add('hidden');
+    videoView.classList.add('hidden');
+    playView.classList.add('hidden');
+    endView.classList.add('hidden');
+    lockView.classList.remove('hidden');
+    document.getElementById('g4-top-stars').textContent = '⭐ ' + toFaNum(data.stars) + ' از ۴';
+    document.getElementById('g4-lock-summary').textContent =
+      'دانش‌آموز: ' + data.name + ' | امتیاز: ' + toFaNum(data.stars) + ' ستاره از ۴ | تاریخ: ' + data.date;
+    document.getElementById('g4-lock-report').textContent = data.report;
+  }
+
+  document.getElementById('menu-btn-g4').addEventListener('click', openGame4);
+  document.getElementById('g4-back-btn').addEventListener('click', showMainMenu);
+
+  // ریست مخفی ۷ ضربه روی تیتر صفحه قفل
+  document.getElementById('g4-lock-title').addEventListener('click', function() {
+    tapCount++;
+    if (tapCount >= 7) {
+      tapCount = 0;
+      document.getElementById('g4-teacher-reset-box').classList.remove('hidden');
+    }
+  });
+  document.getElementById('g4-confirm-reset-btn').addEventListener('click', function() {
+    try { localStorage.removeItem(STORAGE_KEY); } catch (e) {}
+    document.getElementById('g4-teacher-reset-box').classList.add('hidden');
+    stars = 0;
+    updateStarsUI();
+    openGame4();
+    refreshMenuBadges();
+  });
+  document.getElementById('g4-cancel-reset-btn').addEventListener('click', function() {
+    document.getElementById('g4-teacher-reset-box').classList.add('hidden');
+  });
+
+  document.getElementById('g4-lock-copy-btn').addEventListener('click', function() {
+    var txt = document.getElementById('g4-lock-report').textContent;
+    copyTextHelper(txt, document.getElementById('g4-lock-msg'));
+  });
+
+  document.getElementById('g4-start-btn').addEventListener('click', function() {
+    var val = document.getElementById('g4-name-input').value.trim();
+    var err = document.getElementById('g4-name-err');
+    if (!val) {
+      err.classList.remove('hidden');
+      return;
+    }
+    err.classList.add('hidden');
+    playerName = val;
+    startView.classList.add('hidden');
+    videoView.classList.remove('hidden');
+  });
+
+  document.getElementById('g4-enter-game-btn').addEventListener('click', function() {
+    videoView.classList.add('hidden');
+    playView.classList.remove('hidden');
+    document.getElementById('g4-player-label').textContent = '👦 ' + playerName;
+    stars = 0;
+    updateStarsUI();
+    initStation1();
+    showStation(1);
+  });
+
+  function updateStarsUI() {
+    document.getElementById('g4-top-stars').textContent = '⭐ ' + toFaNum(stars) + ' از ۴';
+  }
+
+  function showStation(num) {
+    document.getElementById('g4-station-badge').textContent = 'ایستگاه ' + toFaNum(num) + ' از ۴';
+    ['g4-st1', 'g4-st2', 'g4-st3', 'g4-st4'].forEach(function(id, idx) {
+      var el = document.getElementById(id);
+      if (idx + 1 === num) el.classList.remove('hidden');
+      else el.classList.add('hidden');
+    });
+    window.scrollTo(0, 0);
+  }
+
+  // ==================== ایستگاه ۱: ماشین ورودی-خروجی ====================
+  var st1Questions = [
+    {
+      inVal: '۷',
+      ruleLabel: 'ماشین ×۲',
+      q: 'ورودی ۷ به ماشین «×۲» می‌رود؛ خروجی چند است؟',
+      options: ['۱۴', '۹', '۱۲'],
+      correct: '۱۴',
+      exp: 'ماشین هر عدد ورودی را در ۲ ضرب می‌کند (۷ × ۲ = ۱۴).'
+    },
+    {
+      inVal: '۹',
+      ruleLabel: 'ماشین ÷۳',
+      q: 'ورودی ۹ به ماشین «÷۳» می‌رود؛ خروجی چند است؟',
+      options: ['۶', '۳', '۲۷'],
+      correct: '۳',
+      exp: 'ماشین هر عدد ورودی را بر ۳ تقسیم می‌کند (۹ ÷ ۳ = ۳).'
+    },
+    {
+      inVal: '۴',
+      ruleLabel: '×۳ (محیط‌یاب مثلث)',
+      q: 'ورودی ۴ به ماشین «×۳ (محیط‌یاب مثلث)» می‌رود؛ خروجی چند است؟',
+      options: ['۷', '۱۲', '۱۶'],
+      correct: '۱۲',
+      exp: 'ماشین محیط‌یاب مثلث هر عدد ورودی را در ۳ ضرب می‌کند (۴ × ۳ = ۱۲).'
+    }
+  ];
+  var st1Idx = 0;
+  var st1HadWrong = false;
+
+  function initStation1() {
+    st1Idx = 0;
+    st1HadWrong = false;
+    renderSt1Question();
+  }
+
+  function renderSt1Question() {
+    var item = st1Questions[st1Idx];
+    document.getElementById('g4-st1-step').textContent = 'سؤال ' + toFaNum(st1Idx + 1) + ' از ۳';
+    document.getElementById('g4-mach-in-txt').textContent = item.inVal;
+    document.getElementById('g4-mach-rule-txt').textContent = item.ruleLabel;
+    document.getElementById('g4-mach-out-txt').textContent = '؟';
+    document.getElementById('g4-st1-qtitle').textContent = item.q;
+
+    var fb = document.getElementById('g4-st1-fb');
+    fb.classList.add('hidden');
+    document.getElementById('g4-st1-next-sub').classList.add('hidden');
+    document.getElementById('g4-next-1').classList.add('hidden');
+
+    var optsWrap = document.getElementById('g4-st1-opts');
+    optsWrap.innerHTML = '';
+    item.options.forEach(function(optTxt) {
+      var btn = document.createElement('button');
+      btn.type = 'button';
+      btn.className = 'option-btn';
+      btn.textContent = optTxt;
+      btn.addEventListener('click', function() {
+        fb.classList.remove('hidden');
+        if (optTxt === item.correct) {
+          btn.classList.add('correct');
+          document.getElementById('g4-mach-out-txt').textContent = item.correct;
+          Array.prototype.forEach.call(optsWrap.children, function(c) { c.disabled = true; });
+          fb.className = 'feedback-msg feedback-ok';
+          fb.textContent = '⭐ آفرین! ' + item.exp;
+          if (st1Idx < st1Questions.length - 1) {
+            document.getElementById('g4-st1-next-sub').classList.remove('hidden');
+          } else {
+            if (!st1HadWrong) {
+              stars++;
+              updateStarsUI();
+            }
+            document.getElementById('g4-next-1').classList.remove('hidden');
+          }
+        } else {
+          st1HadWrong = true;
+          btn.classList.add('wrong');
+          btn.disabled = true;
+          fb.className = 'feedback-msg feedback-err';
+          fb.textContent = '❌ دوباره فکر کن!';
+        }
+      });
+      optsWrap.appendChild(btn);
+    });
+  }
+
+  document.getElementById('g4-st1-next-sub').addEventListener('click', function() {
+    st1Idx++;
+    renderSt1Question();
+  });
+
+  document.getElementById('g4-next-1').addEventListener('click', function() {
+    initStation2();
+    showStation(2);
+  });
+
+  // ==================== ایستگاه ۲: محیط مثلث متساوی‌الاضلاع ====================
+  var st2Questions = [
+    {
+      side: '۲',
+      q: 'طول ضلع ۲ باشد، محیط چند است؟',
+      options: ['۵', '۶', '۸'],
+      correct: '۶',
+      exp: 'طول ضلع × ۳ = محیط (۲ × ۳ = ۶).'
+    },
+    {
+      side: '۵',
+      q: 'طول ضلع ۵ باشد، محیط چند است؟',
+      options: ['۱۵', '۸', '۲۰'],
+      correct: '۱۵',
+      exp: 'طول ضلع × ۳ = محیط (۵ × ۳ = ۱۵).'
+    }
+  ];
+  var st2Idx = 0;
+  var st2HadWrong = false;
+
+  function initStation2() {
+    st2Idx = 0;
+    st2HadWrong = false;
+    renderSt2Question();
+  }
+
+  function renderSt2Question() {
+    var item = st2Questions[st2Idx];
+    document.getElementById('g4-st2-step').textContent = 'سؤال ' + toFaNum(st2Idx + 1) + ' از ۲';
+    document.getElementById('g4-tri-side-lbl').textContent = 'طول هر ضلع: ' + item.side;
+    document.getElementById('g4-st2-qtitle').textContent = item.q;
+
+    var fb = document.getElementById('g4-st2-fb');
+    fb.classList.add('hidden');
+    document.getElementById('g4-st2-next-sub').classList.add('hidden');
+    document.getElementById('g4-next-2').classList.add('hidden');
+
+    var optsWrap = document.getElementById('g4-st2-opts');
+    optsWrap.innerHTML = '';
+    item.options.forEach(function(optTxt) {
+      var btn = document.createElement('button');
+      btn.type = 'button';
+      btn.className = 'option-btn';
+      btn.textContent = optTxt;
+      btn.addEventListener('click', function() {
+        fb.classList.remove('hidden');
+        if (optTxt === item.correct) {
+          btn.classList.add('correct');
+          Array.prototype.forEach.call(optsWrap.children, function(c) { c.disabled = true; });
+          fb.className = 'feedback-msg feedback-ok';
+          fb.textContent = '⭐ آفرین! ' + item.exp;
+          if (st2Idx < st2Questions.length - 1) {
+            document.getElementById('g4-st2-next-sub').classList.remove('hidden');
+          } else {
+            if (!st2HadWrong) {
+              stars++;
+              updateStarsUI();
+            }
+            document.getElementById('g4-next-2').classList.remove('hidden');
+          }
+        } else {
+          st2HadWrong = true;
+          btn.classList.add('wrong');
+          btn.disabled = true;
+          fb.className = 'feedback-msg feedback-err';
+          fb.textContent = '❌ دوباره فکر کن!';
+        }
+      });
+      optsWrap.appendChild(btn);
+    });
+  }
+
+  document.getElementById('g4-st2-next-sub').addEventListener('click', function() {
+    st2Idx++;
+    renderSt2Question();
+  });
+
+  document.getElementById('g4-next-2').addEventListener('click', function() {
+    initStation3();
+    showStation(3);
+  });
+
+  // ==================== ایستگاه ۳: ذهنی حساب کن ====================
+  var st3Questions = [
+    {
+      q: 'حساب کن: ۲۲۰۰۰ + ۴۵۰۰۰ =',
+      options: ['۶۷۰۰۰', '۶۵۰۰۰', '۷۷۰۰۰'],
+      correct: '۶۷۰۰۰',
+      exp: '۲۲ هزار به علاوه ۴۵ هزار برابر ۶۷۰۰۰ می‌شود.'
+    },
+    {
+      q: 'حساب کن: ۸۰۰۰ − ۳۰۰۰ =',
+      options: ['۴۰۰۰', '۵۰۰۰', '۶۰۰۰'],
+      correct: '۵۰۰۰',
+      exp: '۸ هزار منهای ۳ هزار برابر ۵۰۰۰ می‌شود.'
+    },
+    {
+      q: 'حساب کن: ۷۰۰ × ۸۰ =',
+      options: ['۵۶۰۰', '۵۶۰۰۰', '۵۶۰۰۰۰'],
+      correct: '۵۶۰۰۰',
+      exp: '۷ × ۸ = ۵۶ و ۳ صفر جلوی آن قرار می‌گیرد: ۵۶۰۰۰.'
+    },
+    {
+      q: 'حساب کن: ۴ × ۳۰۰۰ =',
+      options: ['۱۲۰۰', '۱۲۰۰۰', '۷۰۰۰'],
+      correct: '۱۲۰۰۰',
+      exp: '۴ × ۳ = ۱۲ و ۳ صفر جلوی آن قرار می‌گیرد: ۱۲۰۰۰.'
+    }
+  ];
+  var st3Idx = 0;
+  var st3HadWrong = false;
+
+  function initStation3() {
+    st3Idx = 0;
+    st3HadWrong = false;
+    renderSt3Question();
+  }
+
+  function renderSt3Question() {
+    var item = st3Questions[st3Idx];
+    document.getElementById('g4-st3-step').textContent = 'سؤال ' + toFaNum(st3Idx + 1) + ' از ۴';
+    document.getElementById('g4-st3-qtitle').textContent = item.q;
+
+    var fb = document.getElementById('g4-st3-fb');
+    fb.classList.add('hidden');
+    document.getElementById('g4-st3-next-sub').classList.add('hidden');
+    document.getElementById('g4-next-3').classList.add('hidden');
+
+    var optsWrap = document.getElementById('g4-st3-opts');
+    optsWrap.innerHTML = '';
+    item.options.forEach(function(optTxt) {
+      var btn = document.createElement('button');
+      btn.type = 'button';
+      btn.className = 'option-btn';
+      btn.textContent = optTxt;
+      btn.addEventListener('click', function() {
+        fb.classList.remove('hidden');
+        if (optTxt === item.correct) {
+          btn.classList.add('correct');
+          Array.prototype.forEach.call(optsWrap.children, function(c) { c.disabled = true; });
+          fb.className = 'feedback-msg feedback-ok';
+          fb.textContent = '⭐ آفرین! ' + item.exp;
+          if (st3Idx < st3Questions.length - 1) {
+            document.getElementById('g4-st3-next-sub').classList.remove('hidden');
+          } else {
+            if (!st3HadWrong) {
+              stars++;
+              updateStarsUI();
+            }
+            document.getElementById('g4-next-3').classList.remove('hidden');
+          }
+        } else {
+          st3HadWrong = true;
+          btn.classList.add('wrong');
+          btn.disabled = true;
+          fb.className = 'feedback-msg feedback-err';
+          fb.textContent = '❌ دوباره فکر کن!';
+        }
+      });
+      optsWrap.appendChild(btn);
+    });
+  }
+
+  document.getElementById('g4-st3-next-sub').addEventListener('click', function() {
+    st3Idx++;
+    renderSt3Question();
+  });
+
+  document.getElementById('g4-next-3').addEventListener('click', function() {
+    showStation(4);
+  });
+
+  // ==================== ایستگاه ۴: الگوی حلقه و گیره ====================
+  var st4HadWrong = false;
+  var q4Opts = document.querySelectorAll('.g4-q4-opt');
+  var q4Fb = document.getElementById('g4-q4-fb');
+
+  q4Opts.forEach(function(opt) {
+    opt.addEventListener('click', function() {
+      var isRight = opt.getAttribute('data-correct') === 'true';
+      q4Fb.classList.remove('hidden');
+      if (isRight) {
+        opt.classList.add('correct');
+        q4Opts.forEach(function(b) { b.disabled = true; });
+        if (!st4HadWrong) {
+          stars++;
+          updateStarsUI();
+        }
+        q4Fb.className = 'feedback-msg feedback-ok';
+        q4Fb.textContent = '⭐ آفرین! گیره‌ها یکی کمتر از حلقه‌هاست: ۱۲ − ۱ = ۱۱.';
+        document.getElementById('g4-finish-btn').classList.remove('hidden');
+      } else {
+        st4HadWrong = true;
+        opt.classList.add('wrong');
+        opt.disabled = true;
+        q4Fb.className = 'feedback-msg feedback-err';
+        q4Fb.textContent = '❌ دوباره فکر کن!';
+      }
+    });
+  });
+
+  document.getElementById('g4-finish-btn').addEventListener('click', function() {
+    var nowFa = getPersianDateTime();
+    var starsFa = toFaNum(stars);
+    var reportText =
+      '🔢 گزارش «ریاضی: الگو و ماشین» — صفحه‌های ۱۱ و ۱۲\n' +
+      '👦 نام: ' + playerName + '\n' +
+      '⭐ ستاره‌ها: ' + starsFa + ' از ۴\n' +
+      '🕐 انجام شده در: ' + nowFa;
+
+    var record = {
+      name: playerName,
+      stars: stars,
+      date: nowFa,
+      report: reportText
+    };
+    try {
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(record));
+    } catch (e) {}
+    refreshMenuBadges();
+
+    playView.classList.add('hidden');
+    endView.classList.remove('hidden');
+    document.getElementById('g4-end-stars-line').textContent = 'امتیاز شما: ⭐ ' + starsFa + ' از ۴ ستاره';
+    document.getElementById('g4-end-report').textContent = reportText;
+  });
+
+  document.getElementById('g4-end-copy-btn').addEventListener('click', function() {
+    var txt = document.getElementById('g4-end-report').textContent;
+    copyTextHelper(txt, document.getElementById('g4-end-msg'));
+  });
+})();
+</script>
+</body>
+</html>
