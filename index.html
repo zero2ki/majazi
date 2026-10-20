@@ -994,6 +994,9 @@
                 <div class="critical-rule-banner">
                     ⚠️ <strong>توجه بسیار مهم: باید همه‌ی تکالیف و هر ۳ مرحله‌ی بازی‌ها کامل انجام شود تا مورد قبول قرار بگیرند!</strong>
                 </div>
+            </div>
+        </section>
+
         <!-- ==================== GAME 1 SECTION: MATH (riazi-dars3) ==================== -->
         <section id="g1-section" class="hidden">
             <button type="button" class="btn btn-back" onclick="openSection('menu-section')">🏠 برگشت به منو</button>
@@ -1039,17 +1042,17 @@
                         <svg viewBox="0 0 260 200" dir="ltr">
                             <rect width="260" height="200" fill="#ecfdf5"/>
                             <!-- Direction Banner at Top -->
-                            <rect x="30" y="10" width="200" height="24" rx="12" fill="#d1fae5" stroke="#10b981" stroke-width="1.5"/>
-                            <text x="130" y="26" text-anchor="middle" font-size="11.5" font-weight="bold" fill="#065f46">ورودی از چپ ➔ قانون ماشین ➔ خروجی از راست</text>
+                            <rect x="10" y="10" width="240" height="26" rx="12" fill="#d1fae5" stroke="#10b981" stroke-width="1.5"/>
+                            <text x="130" y="27" text-anchor="middle" font-size="10.5" font-weight="bold" fill="#065f46">ورودی (چپ) ➔ قانون ماشین ➔ خروجی (راست)</text>
 
                             <!-- Left Input Funnel (قیف ورودی از چپ) -->
                             <polygon points="16,76 64,86 64,114 16,124" fill="#f59e0b" stroke="#b45309" stroke-width="3"/>
-                            <text x="36" y="68" text-anchor="middle" font-size="12" font-weight="bold" fill="#b45309">ورودی</text>
+                            <text x="36" y="68" text-anchor="middle" font-size="11.5" font-weight="bold" fill="#b45309">ورودی</text>
 
                             <!-- Animated Input Number 2 moving Left-to-Right into the machine -->
                             <g class="svg-num-in">
                                 <circle cx="28" cy="100" r="15" fill="#fbbf24" stroke="#b45309" stroke-width="2.5"/>
-                                <text x="28" y="106" text-anchor="middle" font-size="17" font-weight="bold" fill="#78350f">۲</text>
+                                <text x="28" y="106" text-anchor="middle" font-size="16" font-weight="bold" fill="#78350f">۲</text>
                             </g>
 
                             <!-- Main Colorful Machine Body -->
@@ -1070,16 +1073,16 @@
 
                             <!-- Right Output Pipe (لوله‌ی خروجی در سمت راست) -->
                             <rect x="196" y="87" width="40" height="26" rx="4" fill="#3b82f6" stroke="#1d4ed8" stroke-width="3"/>
-                            <text x="224" y="68" text-anchor="middle" font-size="12" font-weight="bold" fill="#1d4ed8">خروجی</text>
+                            <text x="224" y="68" text-anchor="middle" font-size="11.5" font-weight="bold" fill="#1d4ed8">خروجی</text>
 
                             <!-- Animated Output Number 6 shooting out to the Right -->
                             <g class="svg-num-out">
                                 <circle cx="222" cy="100" r="16" fill="#4ade80" stroke="#15803d" stroke-width="2.5"/>
-                                <text x="222" y="106" text-anchor="middle" font-size="17" font-weight="bold" fill="#064e3b">۶</text>
+                                <text x="222" y="106" text-anchor="middle" font-size="16" font-weight="bold" fill="#064e3b">۶</text>
                             </g>
 
                             <!-- Bottom LTR Equation Box -->
-                            <rect x="45" y="156" width="170" height="32" rx="10" fill="#ffffff" stroke="#10b981" stroke-width="2.5"/>
+                            <rect x="35" y="156" width="190" height="32" rx="10" fill="#ffffff" stroke="#10b981" stroke-width="2.5"/>
                             <text x="130" y="178" text-anchor="middle" font-size="16" font-weight="bold" fill="#0f172a" direction="ltr">۲ × ۳ = ۶</text>
                         </svg>
                     </div>
@@ -1092,25 +1095,41 @@
                         <svg viewBox="0 0 260 200" dir="ltr">
                             <rect width="260" height="200" fill="#fffbeb"/>
                             <!-- Equilateral Triangle on the Left -->
-                            <polygon points="58,28 18,100 98,100" fill="#fde047" stroke="#d97706" stroke-width="3.5" stroke-linejoin="round"/>
+                            <polygon points="58,22 12,102 104,102" fill="#fde047" stroke="#d97706" stroke-width="3.5" stroke-linejoin="round"/>
                             <!-- Equal side tick marks -->
-                            <line x1="33" y1="62" x2="43" y2="66" stroke="#b45309" stroke-width="3"/>
-                            <line x1="83" y1="62" x2="73" y2="66" stroke="#b45309" stroke-width="3"/>
-                            <line x1="58" y1="94" x2="58" y2="106" stroke="#b45309" stroke-width="3"/>
-                            <text x="58" y="84" text-anchor="middle" font-size="12" font-weight="bold" fill="#78350f">۳ ضلع برابر</text>
+                            <line x1="31" y1="59" x2="41" y2="63" stroke="#b45309" stroke-width="3"/>
+                            <line x1="85" y1="59" x2="75" y2="63" stroke="#b45309" stroke-width="3"/>
+                            <line x1="58" y1="96" x2="58" y2="108" stroke="#b45309" stroke-width="3"/>
+                            <text x="58" y="88" text-anchor="middle" font-size="10.5" font-weight="bold" fill="#78350f">۳ ضلع برابر</text>
 
                             <!-- Mini Machine in Center-Right -->
-                            <rect x="118" y="34" width="126" height="72" rx="14" fill="#f97316" stroke="#c2410c" stroke-width="3"/>
+                            <rect x="118" y="30" width="130" height="72" rx="14" fill="#f97316" stroke="#c2410c" stroke-width="3"/>
                             <g class="svg-gear-cw">
-                                <circle cx="150" cy="70" r="16" fill="#ffedd5" stroke="#c2410c" stroke-width="3" stroke-dasharray="6 4"/>
+                                <circle cx="150" cy="66" r="16" fill="#ffedd5" stroke="#c2410c" stroke-width="3" stroke-dasharray="6 4"/>
                             </g>
-                            <rect x="172" y="54" width="58" height="32" rx="8" fill="#ffffff"/>
-                            <text x="201" y="76" text-anchor="middle" font-size="18" font-weight="bold" fill="#c2410c" direction="ltr">×۳</text>
+                            <rect x="174" y="50" width="58" height="32" rx="8" fill="#ffffff"/>
+                            <text x="203" y="72" text-anchor="middle" font-size="18" font-weight="bold" fill="#c2410c" direction="ltr">×۳</text>
 
-                            <!-- 3 Input-Output Rows at Bottom (LTR) -->
-                            <rect x="16" y="118" width="228" height="68" rx="12" fill="#ffffff" stroke="#fb923c" stroke-width="2.5"/>
-                            <text x="130" y="138" text-anchor="middle" font-size="13" font-weight="bold" fill="#0f172a" direction="ltr">۱ × ۳ = ۳   |   ۲ × ۳ = ۶   |   ۳ × ۳ = ۹</text>
-                            <text x="130" y="162" text-anchor="middle" font-size="12" font-weight="bold" fill="#b45309">ضلع ۱ ⬅ محیط ۳ | ضلع ۲ ⬅ محیط ۶ | ضلع ۳ ⬅ محیط ۹</text>
+                            <!-- 3 Input-Output Columns at Bottom (Clean 3-Column Grid so text never overflows) -->
+                            <rect x="10" y="114" width="240" height="76" rx="12" fill="#ffffff" stroke="#fb923c" stroke-width="2.5"/>
+                            <line x1="90" y1="114" x2="90" y2="190" stroke="#fed7aa" stroke-width="2"/>
+                            <line x1="170" y1="114" x2="170" y2="190" stroke="#fed7aa" stroke-width="2"/>
+                            <line x1="10" y1="146" x2="250" y2="146" stroke="#ffedd5" stroke-width="2"/>
+
+                            <!-- Column 1 (Left) -->
+                            <text x="50" y="135" text-anchor="middle" font-size="12.5" font-weight="bold" fill="#0f172a" direction="ltr">۱ × ۳ = ۳</text>
+                            <text x="50" y="164" text-anchor="middle" font-size="10.5" font-weight="bold" fill="#b45309">ضلع ۱</text>
+                            <text x="50" y="181" text-anchor="middle" font-size="10.5" font-weight="bold" fill="#15803d">محیط ۳</text>
+
+                            <!-- Column 2 (Center) -->
+                            <text x="130" y="135" text-anchor="middle" font-size="12.5" font-weight="bold" fill="#0f172a" direction="ltr">۲ × ۳ = ۶</text>
+                            <text x="130" y="164" text-anchor="middle" font-size="10.5" font-weight="bold" fill="#b45309">ضلع ۲</text>
+                            <text x="130" y="181" text-anchor="middle" font-size="10.5" font-weight="bold" fill="#15803d">محیط ۶</text>
+
+                            <!-- Column 3 (Right) -->
+                            <text x="210" y="135" text-anchor="middle" font-size="12.5" font-weight="bold" fill="#0f172a" direction="ltr">۳ × ۳ = ۹</text>
+                            <text x="210" y="164" text-anchor="middle" font-size="10.5" font-weight="bold" fill="#b45309">ضلع ۳</text>
+                            <text x="210" y="181" text-anchor="middle" font-size="10.5" font-weight="bold" fill="#15803d">محیط ۹</text>
                         </svg>
                     </div>
                     <div class="para-text-box" style="white-space:normal;">📐 ماشین محیط‌یاب مثلث: در کتاب، اول با ماشین «محیط‌یاب مثلث متساوی‌الاضلاع» آشنا شدیم. قانونش «<span class="math-ltr" dir="ltr">×۳</span>» است، چون مثلث ۳ ضلع برابر دارد: ضلع ۱ می‌شود محیط ۳، ضلع ۲ می‌شود محیط ۶، ضلع ۳ می‌شود محیط ۹.</div>
@@ -1128,29 +1147,34 @@
                             <line x1="54" y1="86" x2="54" y2="98" stroke="#0369a1" stroke-width="3"/>
                             <line x1="14" y1="58" x2="26" y2="58" stroke="#0369a1" stroke-width="3"/>
                             <line x1="82" y1="58" x2="94" y2="58" stroke="#0369a1" stroke-width="3"/>
-                            <text x="54" y="63" text-anchor="middle" font-size="14" font-weight="bold" fill="#ffffff" direction="ltr">×۴</text>
+                            <text x="54" y="63" text-anchor="middle" font-size="15" font-weight="bold" fill="#ffffff" direction="ltr">×۴</text>
 
                             <!-- Input-Output Table on the Right (LTR columns) -->
-                            <rect x="104" y="18" width="142" height="82" rx="8" fill="#ffffff" stroke="#0284c7" stroke-width="3"/>
-                            <line x1="104" y1="59" x2="246" y2="59" stroke="#0284c7" stroke-width="2.5"/>
+                            <rect x="104" y="18" width="144" height="82" rx="8" fill="#ffffff" stroke="#0284c7" stroke-width="3"/>
+                            <line x1="104" y1="59" x2="248" y2="59" stroke="#0284c7" stroke-width="2.5"/>
                             <line x1="158" y1="18" x2="158" y2="100" stroke="#7dd3fc" stroke-width="2"/>
                             <line x1="188" y1="18" x2="188" y2="100" stroke="#7dd3fc" stroke-width="2"/>
-                            <line x1="217" y1="18" x2="217" y2="100" stroke="#7dd3fc" stroke-width="2"/>
+                            <line x1="218" y1="18" x2="218" y2="100" stroke="#7dd3fc" stroke-width="2"/>
                             <!-- Row 1: Input -->
-                            <text x="131" y="43" text-anchor="middle" font-size="11.5" font-weight="bold" fill="#0369a1">ورودی</text>
-                            <text x="173" y="44" text-anchor="middle" font-size="14" font-weight="bold" fill="#0f172a">۳</text>
-                            <text x="202" y="44" text-anchor="middle" font-size="14" font-weight="bold" fill="#0f172a">۷</text>
-                            <text x="231" y="44" text-anchor="middle" font-size="14" font-weight="bold" fill="#0f172a">۱۰</text>
+                            <text x="131" y="43" text-anchor="middle" font-size="11" font-weight="bold" fill="#0369a1">ورودی</text>
+                            <text x="173" y="44" text-anchor="middle" font-size="13.5" font-weight="bold" fill="#0f172a">۳</text>
+                            <text x="203" y="44" text-anchor="middle" font-size="13.5" font-weight="bold" fill="#0f172a">۷</text>
+                            <text x="233" y="44" text-anchor="middle" font-size="13.5" font-weight="bold" fill="#0f172a">۱۰</text>
                             <!-- Row 2: Output -->
-                            <text x="131" y="84" text-anchor="middle" font-size="11.5" font-weight="bold" fill="#15803d">خروجی</text>
-                            <text x="173" y="85" text-anchor="middle" font-size="14" font-weight="bold" fill="#15803d">۱۲</text>
-                            <text x="202" y="85" text-anchor="middle" font-size="14" font-weight="bold" fill="#15803d">۲۸</text>
-                            <text x="231" y="85" text-anchor="middle" font-size="14" font-weight="bold" fill="#15803d">۴۰</text>
+                            <text x="131" y="84" text-anchor="middle" font-size="11" font-weight="bold" fill="#15803d">خروجی</text>
+                            <text x="173" y="85" text-anchor="middle" font-size="13.5" font-weight="bold" fill="#15803d">۱۲</text>
+                            <text x="203" y="85" text-anchor="middle" font-size="13.5" font-weight="bold" fill="#15803d">۲۸</text>
+                            <text x="233" y="85" text-anchor="middle" font-size="13.5" font-weight="bold" fill="#15803d">۴۰</text>
 
-                            <!-- Bottom Equations (LTR) -->
-                            <rect x="16" y="116" width="228" height="68" rx="12" fill="#ffffff" stroke="#38bdf8" stroke-width="2.5"/>
-                            <text x="130" y="142" text-anchor="middle" font-size="13.5" font-weight="bold" fill="#0f172a" direction="ltr">۳ × ۴ = ۱۲  |  ۷ × ۴ = ۲۸  |  ۱۰ × ۴ = ۴۰</text>
-                            <text x="130" y="168" text-anchor="middle" font-size="12" font-weight="bold" fill="#0369a1">جدول ورودی و خروجی محیط مربع (قانون: ×۴)</text>
+                            <!-- Bottom Equations (3-Column LTR + Subtitle) -->
+                            <rect x="10" y="114" width="240" height="74" rx="12" fill="#ffffff" stroke="#38bdf8" stroke-width="2.5"/>
+                            <line x1="90" y1="114" x2="90" y2="152" stroke="#bae6fd" stroke-width="2"/>
+                            <line x1="170" y1="114" x2="170" y2="152" stroke="#bae6fd" stroke-width="2"/>
+                            <line x1="10" y1="152" x2="250" y2="152" stroke="#bae6fd" stroke-width="2"/>
+                            <text x="50" y="138" text-anchor="middle" font-size="12" font-weight="bold" fill="#0f172a" direction="ltr">۳ × ۴ = ۱۲</text>
+                            <text x="130" y="138" text-anchor="middle" font-size="12" font-weight="bold" fill="#0f172a" direction="ltr">۷ × ۴ = ۲۸</text>
+                            <text x="210" y="138" text-anchor="middle" font-size="12" font-weight="bold" fill="#0f172a" direction="ltr">۱۰ × ۴ = ۴۰</text>
+                            <text x="130" y="174" text-anchor="middle" font-size="11" font-weight="bold" fill="#0369a1">جدول ورودی و خروجی محیط مربع (قانون: ×۴)</text>
                         </svg>
                     </div>
                     <div class="para-text-box" style="white-space:normal;">🟦 ماشین محیط‌یاب مربع: مربع ۴ ضلع برابر دارد، پس قانون ماشینش «<span class="math-ltr" dir="ltr">×۴</span>» است: ضلع ۳ می‌شود محیط ۱۲، ضلع ۷ می‌شود محیط ۲۸، ضلع ۱۰ می‌شود محیط ۴۰. «جدول ورودی و خروجی» هم دقیقاً همین ماشین است، فقط به شکل جدول کشیده شده!</div>
@@ -1163,7 +1187,7 @@
                             <rect width="260" height="200" fill="#fefce8"/>
                             <!-- Input 2 on Left -->
                             <circle cx="34" cy="92" r="20" fill="#fde047" stroke="#ca8a04" stroke-width="3"/>
-                            <text x="34" y="99" text-anchor="middle" font-size="18" font-weight="bold" fill="#78350f">۲</text>
+                            <text x="34" y="98" text-anchor="middle" font-size="17" font-weight="bold" fill="#78350f">۲</text>
                             <line x1="54" y1="92" x2="78" y2="92" stroke="#475569" stroke-width="5"/>
 
                             <!-- Mystery Machine in Center -->
@@ -1171,20 +1195,21 @@
                             <g class="svg-gear-cw">
                                 <circle cx="130" cy="92" r="24" fill="#f3e8ff" stroke="#6b21a8" stroke-width="3" stroke-dasharray="7 4"/>
                             </g>
-                            <text x="130" y="100" text-anchor="middle" font-size="22" font-weight="bold" fill="#581c87" direction="ltr">؟ ➔ ×۵</text>
+                            <rect x="88" y="76" width="84" height="32" rx="8" fill="#ffffff" stroke="#6b21a8" stroke-width="2"/>
+                            <text x="130" y="98" text-anchor="middle" font-size="16" font-weight="bold" fill="#581c87" direction="ltr">؟ ➔ ×۵</text>
 
                             <!-- Output 10 on Right -->
                             <line x1="182" y1="92" x2="206" y2="92" stroke="#475569" stroke-width="5"/>
                             <circle cx="226" cy="92" r="20" fill="#4ade80" stroke="#15803d" stroke-width="3"/>
-                            <text x="226" y="99" text-anchor="middle" font-size="18" font-weight="bold" fill="#064e3b">۱۰</text>
+                            <text x="226" y="98" text-anchor="middle" font-size="17" font-weight="bold" fill="#064e3b">۱۰</text>
 
                             <!-- Magnifying Glass -->
-                            <circle cx="156" cy="54" r="18" fill="rgba(224, 242, 254, 0.7)" stroke="#0284c7" stroke-width="4"/>
-                            <line x1="169" y1="67" x2="185" y2="83" stroke="#0f172a" stroke-width="6" stroke-linecap="round"/>
+                            <circle cx="158" cy="48" r="16" fill="rgba(224, 242, 254, 0.75)" stroke="#0284c7" stroke-width="3.5"/>
+                            <line x1="170" y1="60" x2="184" y2="74" stroke="#0f172a" stroke-width="5" stroke-linecap="round"/>
 
                             <!-- Bottom Hint Box -->
-                            <rect x="24" y="150" width="212" height="34" rx="10" fill="#ffffff" stroke="#eab308" stroke-width="2.5"/>
-                            <text x="130" y="172" text-anchor="middle" font-size="15" font-weight="bold" fill="#713f12" direction="ltr">۲ × ۵ = ۱۰   |   ۴ × ۵ = ۲۰</text>
+                            <rect x="16" y="150" width="228" height="34" rx="10" fill="#ffffff" stroke="#eab308" stroke-width="2.5"/>
+                            <text x="130" y="172" text-anchor="middle" font-size="14" font-weight="bold" fill="#713f12" direction="ltr">۲ × ۵ = ۱۰   |   ۴ × ۵ = ۲۰</text>
                         </svg>
                     </div>
                     <div class="para-text-box" style="white-space:normal;">🤔 فکر کن: اگر قانون یک ماشین را ندانیم، از روی عددهای ورودی و خروجی می‌توانیم حدسش بزنیم؟</div>
@@ -2118,7 +2143,11 @@
             if (sectionId === 'g3-section' && window.checkG3Status) {
                 window.checkG3Status();
             }
-            window.scrollTo({ top: 0, behavior: 'smooth' });
+            try {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            } catch (e) {
+                window.scrollTo(0, 0);
+            }
         }
 
         /* ==================== GAME 1 IIFE: MATH (riazi-dars3 / riazidars3) ==================== */
